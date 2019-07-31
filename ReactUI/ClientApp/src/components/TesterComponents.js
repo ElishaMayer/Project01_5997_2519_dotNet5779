@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { TesterClient } from './TesterClient';
+
 
 class TesterContent extends React.Component {
     state = {
@@ -19,8 +21,8 @@ class TesterContent extends React.Component {
     };
     handleDelete = (id) => {
         console.log('delete ' + id);
-        this.props.deleteTester(id);
         this.setState({ showTable: true });
+        this.props.deleteTester(id);
     };
     render() {
         if (this.state.testerId === null) {
@@ -42,6 +44,7 @@ class TesterContent extends React.Component {
                     onDiscardTester={this.handleDiscard}
                     onSaveTester={this.handleUpdate}
                     onDeleteTester={this.handleDelete}
+                    add={false}
                 />
             );
         }
@@ -128,13 +131,14 @@ class TesterForm extends React.Component {
             month: this.props.tester.birthDate.getMonth(),
             day: this.props.tester.birthDate.getDate()
         },
-        license: ['A', 'B'],
+        license: this.props.tester.license || [],
         experience: this.props.tester.experience || 0,
         maxDistance: this.props.tester.maxDistance || 0,
         maxWeekExams: this.props.tester.maxWeekExams || 0,
         validation: { message: { isVisible: false, Header: "", body: "" } },
-        error: { id: '', firsName: '', lastName: '' }
-
+        error: { id: '', firsName: '', lastName: '' },
+        loadingDelete: "ui red button",
+        loadingUpdate:"ui primary button"
     };
     handleChange = (e) => {
         var update = {};
@@ -156,6 +160,10 @@ class TesterForm extends React.Component {
             update[e.target.name] = e.target.value;
         }
         this.setState(update);
+    };
+
+    handleLisenceChange = (license) => {
+        this.setState({ license: license })
     };
 
     handleSave = () => {
@@ -181,9 +189,26 @@ class TesterForm extends React.Component {
             data.error.id = " error";
         }
         if (errorMessage.length == 0) {
-            delete this.state.validation;
             this.state.birthDate = new Date(this.state.birthDate.year, this.state.birthDate.month, this.state.birthDate.day);
-            this.props.onSaveTester(this.state);
+            this.state['licenseTypeTeaching'] = this.state['license'];
+            this.state['licenseTypeTeaching'] = this.state['licenseTypeTeaching'].map((num) => getLicense(num));
+            this.state['emailAddress'] = this.state['email'];
+            if (this.state['gender'] == 'Male') {
+                this.state['gender'] = 0;
+            } else if (this.state['gender'] == 'Female') {
+                this.state['gender'] = 1;
+            } else if (this.state['gender'] == 'Other') {
+                this.state['gender'] = 2;
+            } else {
+                this.state['gender'] = 0;
+            }
+            this.setState({ loadingUpdate: "ui primary loading button" });
+            if (this.props.add) {
+                TesterClient.createTester(this.state, this.handleTesterSavedOnServer);
+            } else {
+                TesterClient.updateTester(this.state, this.handleTesterSavedOnServer);
+            }
+
         } else {
             data.validation.message.body = errorMessage.map((msg) => {
                 return <li>{msg}</li>;
@@ -194,25 +219,60 @@ class TesterForm extends React.Component {
         }
     };
 
+    handleTesterSavedOnServer = (message) => {
+        if (message === "OK") {
+            this.props.onSaveTester(this.state);
+        } else {
+            this.setState({ loadingUpdate: "ui primary button" });
+            console.log(message);
+            this.state.birthDate = {
+                year: this.state.birthDate.getFullYear(),
+                month: this.state.birthDate.getMonth(),
+                day: this.state.birthDate.getDate()
+            };
+            var data = this.state;
+            data.validation.message.body=(<li>{message}</li>);
+            data.validation.message.Header = "Tester Error."
+            data.validation.message.isVisible = true;
+            this.setState(data);
+
+        }
+    }
+
+    handleTesterDeletedOnServer = (message) => {
+        if (message === "OK") {
+            this.props.onDeleteTester(this.state.id);
+        } else {
+            var data = this.state;
+            data.validation.message.body = (<li>{message}</li>);
+            data.validation.message.Header = "Tester Error."
+            data.validation.message.isVisible = true;
+            this.setState(data);
+            this.setState({ loadingDelete: "ui red button" });
+        }
+    }
+
     handleDiscard = () => {
         this.props.onDiscardTester();
     };
 
     handleDelete = () => {
-        this.props.onDeleteTester(this.state.id);
+        this.setState({ loadingDelete: "ui red loading button" });
+        TesterClient.deleteTester(this.state.id, this.handleTesterDeletedOnServer);
     };
 
     render() {
+        var state = this.state;
         var tester = this.props.tester;
         const status = tester.id ? "Edit" : "New";
         const button = tester.id ? "Update" : "Save";
         const disabled = tester.id ? " disabled" : "";
         const deleteButton = tester.id ? (
-            <button className="ui red right button" onClick={this.handleDelete}>
+            <button className={this.state.loadingDelete} onClick={this.handleDelete}>
                 Delete Tester
                 </button>) : "";
 
-        if (this.state.validation.message.isVisible) {
+        if (this.state.validation && this.state.validation.message.isVisible) {
             var message = (<div className="ui error message">
                 <div className="header">{this.state.validation.message.Header}</div>
                 <ul className='list'>{this.state.validation.message.body}</ul>
@@ -249,9 +309,9 @@ class TesterForm extends React.Component {
                             <div className='field'>
                                 <label>Gender</label>
                                 <select className="ui fluid search dropdown" onChange={this.handleChange} value={this.state.gender} name="gender">
-                                    <option value="female">Female</option>
-                                    <option value="male">Male</option>
-                                    <option value="other">Other</option>
+                                    <option value="Female">Female</option>
+                                    <option value="Male">Male</option>
+                                    <option value="Other">Other</option>
                                 </select>
                             </div>
                             <div className='field'>
@@ -308,16 +368,7 @@ class TesterForm extends React.Component {
                         </div>
                     </div>
                     <div className='field'>
-                        <div className='four fields'>
-                            <div className='field'>
-                                <label>Licenses</label>
-                                <select multiple="" className="ui dropdown">
-                                    <option value="0">A</option>
-                                    <option value="1">A1</option>
-                                    <option value="2">A2</option>
-                                    <option value="3">B</option>
-                                </select>
-                            </div>
+                        <div className='three fields'>
                             <div className="field">
                                 <label>Max Distance</label>
                                 <input type="text" value={this.state.maxDistance} onChange={this.handleChange} name="maxDistance" placeholder="0">
@@ -335,10 +386,12 @@ class TesterForm extends React.Component {
                             </div>
                         </div>
                     </div>
-
+                    <LicenseCheckBox
+                        licenses={this.state.license}
+                        licenseChaged={this.handleLisenceChange} />
                 </form>
                 {message}
-                <button className="ui primary button" onClick={this.handleSave} >
+                <button className={this.state.loadingUpdate} onClick={this.handleSave} >
                     {button}
                 </button>
                 <button className="ui button" onClick={this.handleDiscard}>
@@ -350,6 +403,131 @@ class TesterForm extends React.Component {
     }
 }
 
+class LicenseCheckBox extends React.Component {
+    state = {
+        B: this.props.licenses.includes('B'),
+        A: this.props.licenses.includes('A'),
+        A1: this.props.licenses.includes('A1'),
+        A2: this.props.licenses.includes('A2'),
+        C1: this.props.licenses.includes('C1'),
+        C: this.props.licenses.includes('C'),
+        D: this.props.licenses.includes('D'),
+        D1: this.props.licenses.includes('D1'),
+        D2: this.props.licenses.includes('D2'),
+        D3: this.props.licenses.includes('D3'),
+        E: this.props.licenses.includes('E'),
+        One: this.props.licenses.includes('1')
+    }
+    handleChange = (e) => {
+
+        if (e.target.name === 'A' && e.target.checked) {
+            console.log('A selected');
+        }
+        var update = {};
+        update[e.target.name] = e.target.checked;
+        this.setState(update);
+        const license = this.state;
+        license[e.target.name] = e.target.checked;
+        this.props.licenseChaged(([
+            license.A ? 'A' : '',
+            license.A1 ? 'A1' : '',
+            license.A2 ? 'A2' : '',
+            license.B ? 'B' : '',
+            license.D ? 'D' : '',
+            license.D1 ? 'D1' : '',
+            license.D2 ? 'D2' : '',
+            license.D3 ? 'D3' : '',
+            license.C ? 'C' : '',
+            license.C1 ? 'C1' : '',
+            license.E ? 'E' : '',
+            license.One ? '1' : '']).filter((item) => item !== ''));
+    };
+    render() {
+        return (
+            <div className="field">
+                <label>Lisences</label>
+                <div className="ui horizontal segments">
+                    <div className="ui segment">
+                        <div className="ui checkbox">
+                            <input type="checkbox" name='A' checked={this.state.A} onChange={this.handleChange} ></input>
+                            <label>A</label>
+                        </div>
+                    </div>
+                    <div className="ui segment">
+                        <div className="ui checkbox">
+                            <input type="checkbox" name='A1' checked={this.state.A1} onChange={this.handleChange} ></input>
+                            <label>A1</label>
+                        </div>
+                    </div>
+                    <div className="ui segment">
+                        <div className="ui checkbox">
+                            <input type="checkbox" name='A2' checked={this.state.A2} onChange={this.handleChange} ></input>
+                            <label>A2</label>
+                        </div>
+                    </div>
+                    <div className="ui segment">
+                        <div className="ui checkbox">
+                            <input type="checkbox" name='B' checked={this.state.B} onChange={this.handleChange} ></input>
+                            <label>B</label>
+                        </div>
+                    </div>
+                    <div className="ui segment">
+                        <div className="ui checkbox">
+                            <input type="checkbox" name='D' checked={this.state.D} onChange={this.handleChange} ></input>
+                            <label>D</label>
+                        </div>
+                    </div>
+                    <div className="ui segment">
+                        <div className="ui checkbox">
+                            <input type="checkbox" name='D1' checked={this.state.D1} onChange={this.handleChange} ></input>
+                            <label>D1</label>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div className="ui horizontal segments">
+                    <div className="ui segment">
+                        <div className="ui checkbox">
+                            <input type="checkbox" name='E' checked={this.state.E} onChange={this.handleChange} ></input>
+                            <label>E</label>
+                        </div>
+                    </div>
+                    <div className="ui segment">
+                        <div className="ui checkbox">
+                            <input type="checkbox" name='One' checked={this.state.One} onChange={this.handleChange} ></input>
+                            <label>1</label>
+                        </div>
+                    </div>
+                    <div className="ui segment">
+                        <div className="ui checkbox">
+                            <input type="checkbox" name='D2' checked={this.state.D2} onChange={this.handleChange} ></input>
+                            <label>D2</label>
+                        </div>
+                    </div>
+                    <div className="ui segment">
+                        <div className="ui checkbox">
+                            <input type="checkbox" name='D3' checked={this.state.D3} onChange={this.handleChange} ></input>
+                            <label>D3</label>
+                        </div>
+                    </div>
+                    <div className="ui segment">
+                        <div className="ui checkbox">
+                            <input type="checkbox" name='C' checked={this.state.C} onChange={this.handleChange} ></input>
+                            <label>C</label>
+                        </div>
+                    </div>
+                    <div className="ui segment">
+                        <div className="ui checkbox">
+                            <input type="checkbox" name='C1' checked={this.state.C1} onChange={this.handleChange} ></input>
+                            <label>C1</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        );
+    }
+}
 
 function checkId(id) {
     if (id == 0) return false;
@@ -374,4 +552,32 @@ function checkId(id) {
 
     return sum % 10 == 0;
 }
-export { TesterContent, TesterForm}
+
+function getLicense(data) {
+    if (data === "B") {
+        return 0;
+    } else if (data === "A2") {
+        return 1;
+    } else if (data === "A1") {
+        return 2;
+    } else if (data === "A") {
+        return 3;
+    } else if (data === "C1") {
+        return 4;
+    } else if (data === "C") {
+        return 5;
+    } else if (data === "D") {
+        return 6;
+    } else if (data === "D1") {
+        return 7;
+    } else if (data === "D2") {
+        return 8;
+    } else if (data === "D3") {
+        return 9;
+    } else if (data === "E") {
+        return 10;
+    } else if (data === "1") {
+        return 11;
+    }
+}
+export { TesterContent, TesterForm }

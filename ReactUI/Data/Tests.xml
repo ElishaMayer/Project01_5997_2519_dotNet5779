@@ -1,0 +1,490 @@
+<?xml version="1.0"?>
+<ArrayOfTest xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Test>
+    <Id>00000128</Id>
+    <TesterId>3798</TesterId>
+    <TraineeId>319185997</TraineeId>
+    <TestTime>2019-01-28T10:00:00</TestTime>
+    <ActualTestTime>2019-02-13T00:00:00</ActualTestTime>
+    <AddressOfBeginningTest>
+      <City>A. Y. Shakhrai Street 24 Jerusalem IL 96470, A. Y. Shakhrai St 24, Jerusalem, ישראל</City>
+      <Street />
+      <Building />
+      <Entrance />
+    </AddressOfBeginningTest>
+    <Criteria>
+      <Criterion>
+        <Type>Kept Distance</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Parking</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Reverse Parking</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Check Mirrors</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Used Signal</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>kept Right of Presidency</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Stopped at Red</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Stopped At Cross Walk</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Right Turn</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Immediate Stop</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Drove Carfully</Type>
+        <Pass>false</Pass>
+      </Criterion>
+    </Criteria>
+    <Passed>false</Passed>
+    <LicenseType>A1</LicenseType>
+    <XmlSaveRouteUrlSerializer>https://www.google.com/maps/dir/?api=1&amp;travelmode=driving&amp;origin=A. Y. Shakhrai Street 24 Jerusalem IL 96470, A. Y. Shakhrai Street 24, Jerusalem, Shalom Hotel Jerusalem&amp;origin_place_id=ChIJUwOyBbzXAhURlGgbD6eN-ZA&amp;destination=A. Y. Shakhrai Street 24 Jerusalem IL 96470, A. Y. Shakhrai Street 24, Jerusalem, Shalom Hotel Jerusalem&amp;destination_place_id=ChIJUwOyBbzXAhURlGgbD6eN-ZA&amp;waypoints=Jerusalem, The Academy of the Hebrew Language|Jerusalem, Goldstein Synagogue|Jerusalem, The Institute for Advanced Studies|Nakhman Avigad Street 1, Jerusalem, אנ"א יצחק רבין HI Yitzhak Rabin Hostel|Ha-Dishon Street 21, Jerusalem, Ella Residence&amp;waypoint_place_ids=ChIJq6rL0sjXAhURnmhD0e-Fn8o|ChIJYevlDsbXAhURfaD5L668DWY|ChIJq2rzscvXAhURWXAYBrCl7vg|ChIJ-7dsic7XAhUR2Oo5rYGQQ18|ChIJQTVhfY_XAhURkmz8DQ2CWk8</XmlSaveRouteUrlSerializer>
+  </Test>
+  <Test>
+    <Id>00000130</Id>
+    <TesterId>18</TesterId>
+    <TraineeId>37982519</TraineeId>
+    <TestTime>2019-01-23T12:00:00</TestTime>
+    <ActualTestTime>2019-01-31T14:00:00</ActualTestTime>
+    <AddressOfBeginningTest>
+      <City>ירושלים, בת ים, ישראל</City>
+      <Street />
+      <Building />
+      <Entrance />
+    </AddressOfBeginningTest>
+    <Criteria>
+      <Criterion>
+        <Type>Kept Distance</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Parking</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Reverse Parking</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Check Mirrors</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Used Signal</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>kept Right of Presidency</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Stopped at Red</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Stopped At Cross Walk</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Right Turn</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Immediate Stop</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Drove Carfully</Type>
+        <Pass>false</Pass>
+      </Criterion>
+    </Criteria>
+    <Passed>false</Passed>
+    <LicenseType>B</LicenseType>
+  </Test>
+  <Test>
+    <Id>00000132</Id>
+    <TesterId>207448523</TesterId>
+    <TraineeId>312731326</TraineeId>
+    <TestTime>2019-01-27T12:00:00</TestTime>
+    <ActualTestTime>2019-01-30T00:00:00</ActualTestTime>
+    <AddressOfBeginningTest>
+      <City>Nachal Dolev, בית שמש, ישראל</City>
+      <Street />
+      <Building />
+      <Entrance />
+    </AddressOfBeginningTest>
+    <Criteria>
+      <Criterion>
+        <Type>Kept Distance</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Parking</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Reverse Parking</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Check Mirrors</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Used Signal</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>kept Right of Presidency</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Stopped at Red</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Stopped At Cross Walk</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Right Turn</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Immediate Stop</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Drove Carfully</Type>
+        <Pass>true</Pass>
+      </Criterion>
+    </Criteria>
+    <Passed>true</Passed>
+    <LicenseType>B</LicenseType>
+    <XmlSaveRouteUrlSerializer>https://www.google.com/maps/dir/?api=1&amp;travelmode=driving&amp;origin=Nachal Dolev, בית שמש, ישראל&amp;origin_place_id=EidOYWNoYWwgRG9sZXYsINeR15nXqiDXqdee16ksINeZ16nXqNeQ15wiLiosChQKEgmP-epkd8MCFRGH22HmOzWH-hIUChIJ3_279V3EAhUROO_7ElUqB-A&amp;destination=Nachal Dolev, בית שמש, ישראל&amp;destination_place_id=EidOYWNoYWwgRG9sZXYsINeR15nXqiDXqdee16ksINeZ16nXqNeQ15wiLiosChQKEgmP-epkd8MCFRGH22HmOzWH-hIUChIJ3_279V3EAhUROO_7ElUqB-A&amp;waypoints=Arvot Nachal Street 4, Bet Shemesh, Eliezer Realty אליעזר נכסים|Nakhal Sorek Street 16, Bet Shemesh, Sha'alei Torah Yeshiva high school|Nachal Habesor Street 7, Bet Shemesh, GR Web Promotions|1, Nahal Nitsanim Street Ramat, Bet Shemesh, Ramat Beit Shemesh Real Estate|Nachal Ein Gedi Street 41, Bet Shemesh, ShemeshPhone&amp;waypoint_place_ids=ChIJNQ41_IDDAhURT_CsFk1qFuk|ChIJ2_eSu4LDAhURo2MHOlUzIm0|ChIJR39s-HnDAhURp6CY54pkHoE|ChIJM10bHZrDAhURt6WeccpoozY|ChIJwQ_DFXTDAhURXM7NUbQuepE</XmlSaveRouteUrlSerializer>
+  </Test>
+  <Test>
+    <Id>00000133</Id>
+    <TesterId>201274370</TesterId>
+    <TraineeId>37982519</TraineeId>
+    <TestTime>2019-01-17T14:00:00</TestTime>
+    <ActualTestTime>2019-01-17T12:00:00</ActualTestTime>
+    <AddressOfBeginningTest>
+      <City>ירושלים, בת ים, ישראל</City>
+      <Street />
+      <Building />
+      <Entrance />
+    </AddressOfBeginningTest>
+    <Criteria>
+      <Criterion>
+        <Type>Kept Distance</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Parking</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Reverse Parking</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Check Mirrors</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Used Signal</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>kept Right of Presidency</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Stopped at Red</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Stopped At Cross Walk</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Right Turn</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Immediate Stop</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Drove Carfully</Type>
+        <Pass>true</Pass>
+      </Criterion>
+    </Criteria>
+    <Passed>true</Passed>
+    <LicenseType>B</LicenseType>
+  </Test>
+  <Test>
+    <Id>00000134</Id>
+    <TesterId>201274370</TesterId>
+    <TraineeId>304883796</TraineeId>
+    <TestTime>2019-01-20T15:00:00</TestTime>
+    <ActualTestTime>0001-01-01T00:00:00</ActualTestTime>
+    <AddressOfBeginningTest>
+      <City>Klil, לוטם, ישראל</City>
+      <Street />
+      <Building />
+      <Entrance />
+    </AddressOfBeginningTest>
+    <Criteria />
+    <Passed xsi:nil="true" />
+    <LicenseType>A</LicenseType>
+  </Test>
+  <Test>
+    <Id>00000135</Id>
+    <TesterId>207448523</TesterId>
+    <TraineeId>332270446</TraineeId>
+    <TestTime>2019-01-20T15:00:00</TestTime>
+    <ActualTestTime>0001-01-01T00:00:00</ActualTestTime>
+    <AddressOfBeginningTest>
+      <City>בית שאן, גני תקווה, ישראל</City>
+      <Street />
+      <Building />
+      <Entrance />
+    </AddressOfBeginningTest>
+    <Criteria />
+    <Passed xsi:nil="true" />
+    <LicenseType>C</LicenseType>
+  </Test>
+  <Test>
+    <Id>00000136</Id>
+    <TesterId>205950348</TesterId>
+    <TraineeId>206845653</TraineeId>
+    <TestTime>2019-01-22T14:00:00</TestTime>
+    <ActualTestTime>0001-01-01T00:00:00</ActualTestTime>
+    <AddressOfBeginningTest>
+      <City>Boulevard Rothschild, תל אביב יפו, ישראל</City>
+      <Street />
+      <Building />
+      <Entrance />
+    </AddressOfBeginningTest>
+    <Criteria />
+    <Passed xsi:nil="true" />
+    <LicenseType>A2</LicenseType>
+  </Test>
+  <Test>
+    <Id>00000125</Id>
+    <TesterId>328729660</TesterId>
+    <TraineeId>326591088</TraineeId>
+    <TestTime>2019-02-05T15:00:00</TestTime>
+    <ActualTestTime>2019-04-22T00:00:00</ActualTestTime>
+    <AddressOfBeginningTest>
+      <City>ההגנה, תל אביב יפו, ישראל</City>
+      <Street />
+      <Building />
+      <Entrance />
+    </AddressOfBeginningTest>
+    <Criteria>
+      <Criterion>
+        <Type>Kept Distance</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Parking</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Reverse Parking</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Check Mirrors</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Used Signal</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>kept Right of Presidency</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Stopped at Red</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Stopped At Cross Walk</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Right Turn</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Immediate Stop</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Drove Carfully</Type>
+        <Pass>false</Pass>
+      </Criterion>
+    </Criteria>
+    <Passed>false</Passed>
+    <LicenseType>A</LicenseType>
+    <XmlSaveRouteUrlSerializer>https://www.google.com/maps/dir/?api=1&amp;travelmode=driving&amp;origin=ההגנה, תל אביב יפו, ישראל&amp;origin_place_id=EizXlNeU15LXoNeULCDXqtecINeQ15HXmdeRINeZ16TXlSwg15nXqdeo15DXnCIuKiwKFAoSCYPZ2httSx0VEQDE8M_U2GmBEhQKEgkffDsZpkwdFRGQP5bAonL7wQ&amp;destination=ההגנה, תל אביב יפו, ישראל&amp;destination_place_id=EizXlNeU15LXoNeULCDXqtecINeQ15HXmdeRINeZ16TXlSwg15nXqdeo15DXnCIuKiwKFAoSCYPZ2httSx0VEQDE8M_U2GmBEhQKEgkffDsZpkwdFRGQP5bAonL7wQ&amp;waypoints=Maze Street 56, Tel Aviv-Yafo, The Diaghilev|Levinsky 108, Tel Aviv-Yafo, Меркозит централ|Yad Harutsim Street 13, Tel Aviv-Yafo, Coffee Bar|Meron Street 18, Tel Aviv-Yafo, InnTLV|Levanda Street 46, Tel Aviv-Yafo, Nahalat Yehuda Residence&amp;waypoint_place_ids=ChIJ8yVNC3xLHRURxqLZomS8p9U|ChIJ0WMFU2FLHRURhiP3WMgg-38|ChIJM4G86XpLHRURE-jEBsTKuwE|ChIJwRY8p2VLHRURFOqz_6PHVEE|ChIJm5jWpmVLHRURO3slHi9e2_8</XmlSaveRouteUrlSerializer>
+  </Test>
+  <Test>
+    <Id>00000137</Id>
+    <TesterId>302950043</TesterId>
+    <TraineeId>319185997</TraineeId>
+    <TestTime>2019-01-22T13:00:00</TestTime>
+    <ActualTestTime>0001-01-01T00:00:00</ActualTestTime>
+    <AddressOfBeginningTest>
+      <City>הועד הלאומי, ירושלים, ישראל</City>
+      <Street />
+      <Building />
+      <Entrance />
+    </AddressOfBeginningTest>
+    <Criteria />
+    <Passed xsi:nil="true" />
+    <LicenseType>A</LicenseType>
+  </Test>
+  <Test>
+    <Id>00000129</Id>
+    <TesterId>18</TesterId>
+    <TraineeId>314661133</TraineeId>
+    <TestTime>2019-01-22T12:00:00</TestTime>
+    <ActualTestTime>2019-01-29T00:00:00</ActualTestTime>
+    <AddressOfBeginningTest>
+      <City>בית הדפוס, ירושלים, ישראל</City>
+      <Street />
+      <Building />
+      <Entrance />
+    </AddressOfBeginningTest>
+    <Criteria>
+      <Criterion>
+        <Type>Kept Distance</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Parking</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Reverse Parking</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Check Mirrors</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Used Signal</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Stopped at Red</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Stopped At Cross Walk</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Right Turn</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Immediate Stop</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Drove Carfully</Type>
+        <Pass>false</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Left Turn</Type>
+        <Pass>false</Pass>
+      </Criterion>
+    </Criteria>
+    <Passed>false</Passed>
+    <LicenseType>C1</LicenseType>
+  </Test>
+  <Test>
+    <Id>00000139</Id>
+    <TesterId>205950348</TesterId>
+    <TraineeId>308378702</TraineeId>
+    <TestTime>2019-01-21T12:00:00</TestTime>
+    <ActualTestTime>2019-05-21T08:00:00</ActualTestTime>
+    <AddressOfBeginningTest>
+      <City>Flieman Street, חיפה, ישראל</City>
+      <Street />
+      <Building />
+      <Entrance />
+    </AddressOfBeginningTest>
+    <Criteria>
+      <Criterion>
+        <Type>Kept Distance</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Parking</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Reverse Parking</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Check Mirrors</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Used Signal</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Stopped at Red</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Stopped At Cross Walk</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Right Turn</Type>
+        <Pass>true</Pass>
+      </Criterion>
+      <Criterion>
+        <Type>Immediate Stop</Type>
+        <Pass>true</Pass>
+      </Criterion>
+    </Criteria>
+    <Passed>true</Passed>
+    <LicenseType>A</LicenseType>
+    <XmlSaveRouteUrlSerializer>https://www.google.com/maps/dir/?api=1&amp;travelmode=driving&amp;origin=Flieman Street, חיפה, ישראל&amp;origin_place_id=EiRGbGllbWFuIFN0cmVldCwg15fXmdek15QsINeZ16nXqNeQ15wiLiosChQKEgnjgBjTQbsdFRGGE7l7gb068hIUChIJRegNdUy6HRURmlKBKpgjXcM&amp;destination=Flieman Street, חיפה, ישראל&amp;destination_place_id=EiRGbGllbWFuIFN0cmVldCwg15fXmdek15QsINeZ16nXqNeQ15wiLiosChQKEgnjgBjTQbsdFRGGE7l7gb068hIUChIJRegNdUy6HRURmlKBKpgjXcM&amp;waypoints=Heinrich Heine 1, חיפה, Villa Carmel|Haifa, Carmel Beach Central Bus Station|Kdoshei Jassy Street 2, Haifa, Garden Hotel|Sderot Mapu 12, Haifa, Eshkol Housing Haifa- Boutique Apartment|Har'el Street 19, Haifa, The Hebrew Reali School - Ahuza Branch&amp;waypoint_place_ids=ChIJgYF1Kga7HRURsbOeCtHEzqQ|ChIJH2FUZ2a7HRURudF7C7M-qlM|ChIJK09OAGm7HRURr5lgaoJm0cM|ChIJh_SHVBe7HRURdIBrthql9nQ|ChIJjbUqMgO7HRURpf6YqEWhBI8</XmlSaveRouteUrlSerializer>
+  </Test>
+</ArrayOfTest>

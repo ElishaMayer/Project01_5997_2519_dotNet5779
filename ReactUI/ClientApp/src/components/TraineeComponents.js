@@ -104,7 +104,7 @@ class TraineeRow extends React.Component {
                 <td><a href={"mailto:" + trainee.email}>{trainee.email}</a></td>
                 <td>{trainee.address}</td>
                 <td>{(new Date(Date.now())).getFullYear() - trainee.birthDate.getFullYear()}</td>
-                <td>{trainee.license.join(' ')}</td>
+                <td>{trainee.license.map((license) => license.license).join(' ')}</td>
                 <td>{trainee.schoolName}</td>
                 <td>{trainee.teacherName}</td>
 
@@ -126,7 +126,7 @@ class TraineeForm extends React.Component {
             month: this.props.trainee.birthDate.getMonth(),
             day: this.props.trainee.birthDate.getDate()
         },
-        license: ['A', 'B'],
+        license: this.props.trainee.license||[],
         teacherName: this.props.trainee.teacherName || '',
         schoolName: this.props.trainee.schoolName || '',
         validation: { message: { isVisible: false, Header: "", body: "" } },
@@ -191,6 +191,10 @@ class TraineeForm extends React.Component {
 
     handleDelete = () => {
         this.props.onDeleteTrainee(this.state.id);
+    };
+
+    handleChangeLisence = (updated) => {
+        this.setState({ license: updated });
     };
 
     render() {
@@ -299,16 +303,7 @@ class TraineeForm extends React.Component {
                         </div>
                     </div>
                     <div className='field'>
-                        <div className='three fields'>
-                            <div className='field'>
-                                <label>Licenses</label>
-                                <select multiple="" className="ui dropdown">
-                                    <option value="0">A</option>
-                                    <option value="1">A1</option>
-                                    <option value="2">A2</option>
-                                    <option value="3">B</option>
-                                </select>
-                            </div>
+                        <div className='two fields'>
                             <div className="field">
                                 <label>School Name</label>
                                 <input type="text" value={this.state.schoolName} onChange={this.handleChange} name="schoolName" placeholder="">
@@ -321,20 +316,173 @@ class TraineeForm extends React.Component {
                             </div>
                         </div>
                     </div>
-
+                    <div className="ui segment">
+                        <div className='field'>
+                            <label>Lisence Learning</label>
+                            <LisenceTable
+                                license={this.state.license}
+                                handleChangeLisence={this.handleChangeLisence}/>
+                        </div>
+                    </div>
                 </form>
                 {message}
-                <button className="ui primary button" onClick={this.handleSave} >
-                    {button}
+                <div className="ui segment">
+                    <button className="ui primary button" onClick={this.handleSave} >
+                        {button}
+                    </button>
+                    <button className="ui button" onClick={this.handleDiscard}>
+                        Discard
                 </button>
-                <button className="ui button" onClick={this.handleDiscard}>
-                    Discard
-                </button>
-                {deleteButton}
+                    {deleteButton}
+                </div>
             </div>
         );
     }
 }
+
+class LisenceTable extends React.Component {
+    state = { license: this.props.license };
+    handleChange = (lisence) => {
+        if (lisence.enabled) {
+            var size = this.state.license.length;
+            var lisences = this.state.license.map((lis) => {
+                if (lis.license === lisence.license) {
+                    return lisence;
+                } else {
+                    return lis;
+                }
+            });
+            var licenseTag = lisences.map((item) => item.license);
+            if (!licenseTag.includes(lisence.license)) {
+                lisences = lisences.concat(lisence);
+            }
+        } else {
+            var lisences = this.state.license.filter((item) => {
+                return item.license !== lisence.license;
+            });
+        }
+        console.log(lisences.length);
+        this.props.handleChangeLisence(lisences);
+        this.setState({ license: lisences });
+    };
+    render() {
+        var propLicense = this.props.license;
+        var lisence = ['A', 'A1', 'A2', 'B', 'C', 'C1', 'D', 'D1', 'D2', 'D3', 'E', '1'].map((lis) => {
+            var reLisence = propLicense.filter(
+                (item) => {
+                    return item.license === lis
+                });
+            if (reLisence.length === 1) {
+                reLisence = reLisence[0];
+                return (
+                    <LicenseRow
+                        enabled={true}
+                        readyForTest={reLisence.readyForTest}
+                        license={lis}
+                        numberOfLessons={reLisence.numberOfLessons}
+                        gearType={reLisence.gearType}
+                        handleChange={this.handleChange}
+                    />);
+            }
+            else {
+                return (
+                    < LicenseRow
+                        enabled={false}
+                        readyForTest={false}
+                        license={lis}
+                        numberOfLessons={0}
+                        gearType={'Manual'}
+                        handleChange={this.handleChange}
+/>);
+            }
+        });
+        return (
+            <table className='ui celled unstackable table'>
+                <thead>
+                    <tr>
+                        <th className='left aligned'>Is Leaning</th>
+                        <th>Lisence Type</th>
+                        <th>Car Gear Type</th>
+                        <th>Num Of Lessons</th>
+                        <th>Ready for Test</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {lisence}
+                </tbody>
+            </table>
+        );
+    }
+}
+
+class LicenseRow extends React.Component {
+    state = {
+        enabled: this.props.enabled,
+        license: this.props.license,
+        gearType: this.props.gearType,
+        numberOfLessons: this.props.numberOfLessons,
+        readyForTest: this.props.readyForTest,
+    }
+
+    handleChange = (e) => {
+        var update = this.state;
+        if (e.target.name === 'gearType') {
+            update[e.target.name] = e.target.value;
+            this.setState(update);
+        }else if (isNaN(e.target.value)) {
+            update[e.target.name] = '0';
+            this.setState(update);
+        } else if (e.target.name !== 'numberOfLessons' || (!isNaN(e.target.value) && parseInt(e.target.value) >= 0)) {
+            update[e.target.name] = e.target.value;
+            this.setState(update);
+        }
+        this.props.handleChange(update);
+    };
+
+    handleEnable = (e) => {
+        var val = { enabled: !this.state.enabled };
+        this.setState(val);
+        var update = this.state;
+        update["enabled"] = !this.state.enabled;
+        this.props.handleChange(update);
+    };
+
+    render() {
+        if (this.props.readyForTest) {
+            var icon = (<i className='green big check icon'></i>);
+        } else {
+            var icon = (<i className='red big close icon'></i>);
+        }
+        const disabled = this.state.enabled ? "" : " disabled";
+
+
+        return (
+            <tr>
+                <td className='left aligned'>
+                    <div className="ui test toggle checkbox">
+                        <input type="checkbox" checked={this.state.enabled} onChange={this.handleEnable} />
+                        <label> </label>
+                    </div>
+                </td>
+                <td>{this.props.license}</td>
+                <td>
+                    <select multiple="" value={this.state.gearType} name="gearType" onChange={this.handleChange} className={"ui dropdown" + disabled} >
+                        <option value="Auto">Auto</option>
+                        <option value="Manual">Manual</option>
+                    </select>
+                </td>
+                <td>
+                    <div className={"six wide field" + disabled} >
+                        <input type="text" value={this.state.numberOfLessons} onChange={this.handleChange} name="numberOfLessons" placeholder="">
+                        </input>
+                    </div>
+                </td>
+                <td>{icon}</td>
+            </tr>
+        );
+    }
+}
+
 
 
 function checkId(id) {

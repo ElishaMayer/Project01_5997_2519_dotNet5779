@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<trainees>
+  <trainee>
+    <id>332307065</id>
+    <firstName>Alaluf</firstName>
+    <lastName>Yafa</lastName>
+    <gender>Female</gender>
+    <address>הים, אילת, ישראל</address>
+    <birthDate>1999-01-01T00:00:00</birthDate>
+    <emailAddress>abc.sc@gmail.com</emailAddress>
+    <phoneNum />
+    <teacherName></teacherName>
+    <schoolName>GalGal</schoolName>
+    <CollectionLicenseTypeLearning />
+  </trainee>
+  <trainee>
+    <id>332484609</id>
+    <firstName>Abuxsis</firstName>
+    <lastName>Gavriela</lastName>
+    <gender>Female</gender>
+    <address>תל אביב, חיפה, ישראל</address>
+    <birthDate>1991-01-01T00:00:00</birthDate>
+    <emailAddress>abc.sc@gmail.com</emailAddress>
+    <phoneNum />
+    <teacherName></teacherName>
+    <schoolName>GalGal</schoolName>
+    <CollectionLicenseTypeLearning />
+  </trainee>
+  <trainee>
+    <id>336390885</id>
+    <firstName>Simchon</firstName>
+    <lastName>Shlomo</lastName>
+    <gender>Male</gender>
+    <address>הדגן, חשמונאים</address>
+    <birthDate>1991-01-01T00:00:00</birthDate>
+    <emailAddress>abc.sc@gmail.com</emailAddress>
+    <phoneNum />
+    <teacherName></teacherName>
+    <schoolName>GalGal</schoolName>
+    <CollectionLicenseTypeLearning />
+  </trainee>
+  <trainee>
+    <id>314661133</id>
+    <firstName>Ray</firstName>
+    <lastName>Bob</lastName>
+    <gender>Male</gender>
+    <address>בית הדפוס, ירושלים, ישראל</address>
+    <birthDate>1980-01-01T00:00:00</birthDate>
+    <emailAddress>abc.sc@gmail.com</emailAddress>
+    <phoneNum />
+    <teacherName>Ayala</teacherName>
+    <schoolName>Shachar</schoolName>
+    <CollectionLicenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>C1</license>
+        <numOfLessons>40</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+    </CollectionLicenseTypeLearning>
+  </trainee>
+  <trainee>
+    <id>342533643</id>
+    <firstName>Rami</firstName>
+    <lastName>Gil</lastName>
+    <gender>Male</gender>
+    <address>הסיגלית 1, חדרה, ישראל</address>
+    <birthDate>2000-01-01T00:00:00</birthDate>
+    <emailAddress>abc.sc@gmail.com</emailAddress>
+    <phoneNum />
+    <teacherName></teacherName>
+    <schoolName></schoolName>
+    <CollectionLicenseTypeLearning />
+  </trainee>
+  <trainee>
+    <id>328772801</id>
+    <firstName>Neomi</firstName>
+    <lastName>Mayer</lastName>
+    <gender>Other</gender>
+    <address>הרצל 631, בית שמש, ישראל</address>
+    <birthDate>1997-03-15T00:00:00</birthDate>
+    <emailAddress>abc.sc@gmail.com</emailAddress>
+    <phoneNum />
+    <teacherName>Nechama</teacherName>
+    <schoolName>Shemesh</schoolName>
+    <CollectionLicenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>A</license>
+        <numOfLessons>67</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+    </CollectionLicenseTypeLearning>
+  </trainee>
+  <trainee>
+    <id>339794166</id>
+    <firstName>Aboulafia</firstName>
+    <lastName>Dov</lastName>
+    <gender>Male</gender>
+    <address>מבוא הישיבה, בית אל</address>
+    <birthDate>2000-01-01T00:00:00</birthDate>
+    <emailAddress>abc.sc@gmail.com</emailAddress>
+    <phoneNum />
+    <teacherName></teacherName>
+    <schoolName>GalGal</schoolName>
+    <CollectionLicenseTypeLearning />
+  </trainee>
+  <trainee>
+    <id>32087835</id>
+    <firstName>Efy</firstName>
+    <lastName>Tei</lastName>
+    <gender>Male</gender>
+    <address>כי"ח, טבריה, ישראל</address>
+    <birthDate>1990-01-19T00:00:00</birthDate>
+    <emailAddress>efraimt@gmail.com</emailAddress>
+    <phoneNum>0549446170</phoneNum>
+    <teacherName>חירד</teacherName>
+    <schoolName>רמזור</schoolName>
+    <CollectionLicenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>A</license>
+        <numOfLessons>25</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+    </CollectionLicenseTypeLearning>
+  </trainee>
+  <trainee>
+    <id>312731326</id>
+    <firstName>Chezki</firstName>
+    <lastName>Botwinick</lastName>
+    <gender>Male</gender>
+    <address>Nachal Dolev, בית שמש, ישראל</address>
+    <birthDate>1992-12-14T00:00:00</birthDate>
+    <emailAddress>chezkibot@gmail.com</emailAddress>
+    <phoneNum>0532824787</phoneNum>
+    <teacherName>Yaakov</teacherName>
+    <schoolName>motis</schoolName>
+    <CollectionLicenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>B</license>
+        <numOfLessons>28</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+    </CollectionLicenseTypeLearning>
+  </trainee>
+  <trainee>
+    <id>323485631</id>
+    <firstName>Nir</firstName>
+    <lastName>Gali</lastName>
+    <gender>Male</gender>
+    <address>K. Z. Treibush, רחובות, ישראל</address>
+    <birthDate>1987-01-12T00:00:00</birthDate>
+    <emailAddress>nirgali@gmail.com</emailAddress>
+    <phoneNum>0545978789</phoneNum>
+    <teacherName>Teena</teacherName>
+    <schoolName>Hagefen</schoolName>
+    <CollectionLicenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>A</license>
+        <numOfLessons>25</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+    </CollectionLicenseTypeLearning>
+  </trainee>
+  <trainee>
+    <id>316353119</id>
+    <firstName>Datya</firstName>
+    <lastName>Ben Dor</lastName>
+    <gender>Female</gender>
+    <address>זית רענן, מבשרת ציון, ישראל</address>
+    <birthDate>1998-04-20T00:00:00</birthDate>
+    <emailAddress>datyaben@bezeqint.net</emailAddress>
+    <phoneNum>0528744165</phoneNum>
+    <teacherName>Arale</teacherName>
+    <schoolName>Agam</schoolName>
+    <CollectionLicenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>D1</license>
+        <numOfLessons>32</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+    </CollectionLicenseTypeLearning>
+  </trainee>
+  <trainee>
+    <id>324511955</id>
+    <firstName>Too</firstName>
+    <lastName>Bishvat</lastName>
+    <gender>Other</gender>
+    <address>הרימון, גבעת שמואל, ישראל</address>
+    <birthDate>1987-01-31T00:00:00</birthDate>
+    <emailAddress>15thshvat@gmail.com</emailAddress>
+    <phoneNum>0501515151</phoneNum>
+    <teacherName>Rimon</teacherName>
+    <schoolName>Shiva</schoolName>
+    <CollectionLicenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>C1</license>
+        <numOfLessons>12</numOfLessons>
+        <readyForTest>false</readyForTest>
+      </licenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>A</license>
+        <numOfLessons>16</numOfLessons>
+        <readyForTest>false</readyForTest>
+      </licenseTypeLearning>
+    </CollectionLicenseTypeLearning>
+  </trainee>
+  <trainee>
+    <id>206845653</id>
+    <firstName>Yaakov</firstName>
+    <lastName>Shwekey</lastName>
+    <gender>Male</gender>
+    <address>Boulevard Rothschild, תל אביב יפו, ישראל</address>
+    <birthDate>1977-09-22T00:00:00</birthDate>
+    <emailAddress>music@musica.com</emailAddress>
+    <phoneNum>047894561</phoneNum>
+    <teacherName>Debbi</teacherName>
+    <schoolName>Pineapple</schoolName>
+    <CollectionLicenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>A2</license>
+        <numOfLessons>17</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>B</license>
+        <numOfLessons>22</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+    </CollectionLicenseTypeLearning>
+  </trainee>
+  <trainee>
+    <id>308378702</id>
+    <firstName>Haya</firstName>
+    <lastName>Weissfish</lastName>
+    <gender>Female</gender>
+    <address>Flieman Street, חיפה, ישראל</address>
+    <birthDate>1995-05-25T00:00:00</birthDate>
+    <emailAddress>haya@aboul.co.il</emailAddress>
+    <phoneNum>0598456423</phoneNum>
+    <teacherName>Yoav</teacherName>
+    <schoolName>Shlomo</schoolName>
+    <CollectionLicenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>A</license>
+        <numOfLessons>25</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+    </CollectionLicenseTypeLearning>
+  </trainee>
+  <trainee>
+    <id>37982519</id>
+    <firstName>Fredman</firstName>
+    <lastName>Jacob</lastName>
+    <gender>Male</gender>
+    <address>ירושלים, בת ים, ישראל</address>
+    <birthDate>1985-01-12T00:00:00</birthDate>
+    <emailAddress>abc@gmail.com</emailAddress>
+    <phoneNum />
+    <teacherName>Nechama</teacherName>
+    <schoolName>Shachar</schoolName>
+    <CollectionLicenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>B</license>
+        <numOfLessons>25</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+    </CollectionLicenseTypeLearning>
+  </trainee>
+  <trainee>
+    <id>326591088</id>
+    <firstName>Abu</firstName>
+    <lastName>Avia</lastName>
+    <gender>Female</gender>
+    <address>ההגנה, תל אביב יפו, ישראל</address>
+    <birthDate>1999-01-01T00:00:00</birthDate>
+    <emailAddress>abu@gmail.com</emailAddress>
+    <phoneNum />
+    <teacherName>Yehoshua</teacherName>
+    <schoolName>Gil Drivers</schoolName>
+    <CollectionLicenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>A</license>
+        <numOfLessons>30</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>D1</license>
+        <numOfLessons>30</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+    </CollectionLicenseTypeLearning>
+  </trainee>
+  <trainee>
+    <id>329043459</id>
+    <firstName>Moshe</firstName>
+    <lastName>Pinchas</lastName>
+    <gender>Male</gender>
+    <address>מדעים ויהדות, חדרה, ישראל</address>
+    <birthDate>1988-01-01T00:00:00</birthDate>
+    <emailAddress>moshe.min@gmail.com</emailAddress>
+    <phoneNum>0557983628</phoneNum>
+    <teacherName></teacherName>
+    <schoolName>Gil Drivers</schoolName>
+    <CollectionLicenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>D3</license>
+        <numOfLessons>40</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+    </CollectionLicenseTypeLearning>
+  </trainee>
+  <trainee>
+    <id>304883796</id>
+    <firstName>Avi</firstName>
+    <lastName>Cohen</lastName>
+    <gender>Male</gender>
+    <address>Klil, לוטם, ישראל</address>
+    <birthDate>1990-08-12T00:00:00</birthDate>
+    <emailAddress>abc.sc@gmail.com</emailAddress>
+    <phoneNum>0524897515</phoneNum>
+    <teacherName>Tamar</teacherName>
+    <schoolName>Hagefen</schoolName>
+    <CollectionLicenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>A</license>
+        <numOfLessons>124</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+    </CollectionLicenseTypeLearning>
+  </trainee>
+  <trainee>
+    <id>332270446</id>
+    <firstName>Tapiro</firstName>
+    <lastName>Dudu</lastName>
+    <gender>Male</gender>
+    <address>בית שאן, גני תקווה, ישראל</address>
+    <birthDate>2000-01-01T00:00:00</birthDate>
+    <emailAddress>abc.sc@gmail.com</emailAddress>
+    <phoneNum />
+    <teacherName>Nechama</teacherName>
+    <schoolName>GalGal</schoolName>
+    <CollectionLicenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>C</license>
+        <numOfLessons>26</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+    </CollectionLicenseTypeLearning>
+  </trainee>
+  <trainee>
+    <id>319185997</id>
+    <firstName>Mayer</firstName>
+    <lastName>Elisha</lastName>
+    <gender>Male</gender>
+    <address>הועד הלאומי, ירושלים, ישראל</address>
+    <birthDate>1995-01-01T00:00:00</birthDate>
+    <emailAddress>abc.sc@gmail.com</emailAddress>
+    <phoneNum>0532429933</phoneNum>
+    <teacherName>Yehoshua</teacherName>
+    <schoolName>Gil Drivers</schoolName>
+    <CollectionLicenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>A</license>
+        <numOfLessons>30</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>A1</license>
+        <numOfLessons>40</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+    </CollectionLicenseTypeLearning>
+  </trainee>
+  <trainee>
+    <id>203148564</id>
+    <firstName>Adi</firstName>
+    <lastName>Werner</lastName>
+    <gender>Female</gender>
+    <address>Florentin Street, תל אביב יפו, ישראל</address>
+    <birthDate>1985-01-05T00:00:00</birthDate>
+    <emailAddress>adidas@gmail.com</emailAddress>
+    <phoneNum>0504845622</phoneNum>
+    <teacherName>Debbi</teacherName>
+    <schoolName>Shachar</schoolName>
+    <CollectionLicenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>D</license>
+        <numOfLessons>33</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+    </CollectionLicenseTypeLearning>
+  </trainee>
+</trainees>

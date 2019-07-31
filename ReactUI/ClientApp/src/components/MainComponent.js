@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 //import { start } from 'repl';
 import { TesterForm, TesterContent } from './TesterComponents';
+import { TesterClient } from './TesterClient';
 import { TraineeForm, TraineeContent } from './TraineeComponents';
 
 import { MenuBar } from './Menu';
@@ -12,32 +13,7 @@ import { MenuBar } from './Menu';
 export default class MainComponent extends Component {
     state = {
         testers:
-            [{
-                id: 18, firstName: "elisja",
-                lastName: "mayer",
-                gender: "male",
-                phoneNumber: "0530009933",
-                email: "elisja@gmail.com",
-                address: "Beit Shemesh Hertzel 631",
-                birthDate: new Date(1995, 8, 18),
-                license: ['A', 'B'],
-                experience: 1,
-                maxDistance: 1,
-                maxWeekExams: 1
-            },
-            {
-                id: 319185997, firstName: "elisja",
-                lastName: "mayer",
-                gender: "male",
-                phoneNumber: "0530009933",
-                email: "elisja@gmail.com",
-                address: "Beit Shemesh Hertzel 631",
-                birthDate: new Date(1995, 8, 18),
-                license: ['A', 'B'],
-                experience: 1,
-                maxDistance: 1,
-                maxWeekExams: 1
-            }],
+            [],
         trainees:
             [{
                 id: 18, firstName: "trainne",
@@ -47,7 +23,9 @@ export default class MainComponent extends Component {
                 email: "elisja@gmail.com",
                 address: "Beit Shemesh Hertzel 631",
                 birthDate: new Date(1995, 8, 18),
-                license: ['A', 'B'],
+                license: [
+                    { numberOfLessons: 5, license: 'A', gearType: 'Auto', readyForTest: false },
+                    { numberOfLessons: 30, license: 'B', gearType: 'Manual', readyForTest: true }],
                 schoolName: "Gil",
                 teacherName:"Meir"
             },
@@ -59,7 +37,9 @@ export default class MainComponent extends Component {
                 email: "elisja@gmail.com",
                 address: "Beit Shemesh Hertzel 631",
                 birthDate: new Date(1995, 8, 18),
-                license: ['A', 'B'],
+                license: [
+                    { numberOfLessons: 5, license: 'C', gearType: 'Auto', readyForTest: false },
+                    { numberOfLessons: 30, license: 'D', gearType: 'Manual', readyForTest: true }],
                 schoolName: "Gil",
                 teacherName: "Meir"
             }],
@@ -76,9 +56,10 @@ export default class MainComponent extends Component {
             }
         });
         this.setState({ testers: testers });
+        TesterClient.getTesters(this.handleLoad);
+
     };
     addTester = (addTester) => {
-        console.log("add tester");
         this.setState({ testers: this.state.testers.concat(addTester), addTester: false })
     };
     removeTester = (id) => {
@@ -88,11 +69,9 @@ export default class MainComponent extends Component {
         this.setState({ testers: testers })
     };
     addTesterClick = () => {
-        console.log('add tester');
         this.setState({ addTester: true })
     };
     discardTesterClick = () => {
-        console.log('add tester');
         this.setState({ addTester: false })
     };
 
@@ -107,8 +86,7 @@ export default class MainComponent extends Component {
         this.setState({ trainees: trainees });
     };
     addTrainee = (addTrainee) => {
-        console.log("add trainee");
-        this.setState({ trainees: this.state.trainees.concat(addTrainee), addTrainee: false })
+        this.setState({ trainees: this.state.trainees.concat(addTrainee), addTrainee: false });
     };
     removeTrainee = (id) => {
         var trainees = this.state.trainees.filter((trainee) => {
@@ -117,23 +95,46 @@ export default class MainComponent extends Component {
         this.setState({ trainees: trainees })
     };
     addTraineelick = () => {
-        console.log('add trainee');
         this.setState({ addTrainee: true })
     };
     discardTraineeClick = () => {
-        console.log('add trainee');
         this.setState({ addTrainee: false })
     };
     handleChangeContent = (content) => {
         this.setState({ content: content, addTrainee: false, addTester:false});
     };
+    handleLoad = (testers) => {
+        testers = testers.map((tester) => {
+            tester['birthDate'] = new Date(tester['birthDate']);
+            tester['license'] = tester['licenseTypeTeaching'];
+            tester['email'] = tester['emailAddress'];
+            if (tester['gender'] == 0) {
+                tester['gender'] = 'Male';
+            } else if (tester['gender'] == 1) {
+                tester['gender'] = 'Female';
+            } else if (tester['gender'] == 2) {
+                tester['gender'] = 'Other';
+            }
+            tester['license'] = tester['license'].map((num) => getLicense(num));
+            tester['address'] = tester['address']['city'] + ' ' + tester['address']['street'] + ' ' + tester['address']['building'];
+
+            return tester;
+        });
+        this.setState({ testers: testers });
+    }
+    constructor(props) {
+        super(props);
+        TesterClient.getTesters(this.handleLoad);
+    }
     render() {
+
         if (this.state.addTester) {
             var mainContent = (
                 <TesterForm
                     tester={{ birthDate: (new Date(Date.now())) }}
                     onDiscardTester={this.discardTesterClick}
                     onSaveTester={this.addTester}
+                    add={true}
                 />);
         } else if (this.state.addTrainee) {
             var mainContent = (
@@ -144,8 +145,8 @@ export default class MainComponent extends Component {
                 />);
         } else{
             var mainContent = (
-                <div class="main ui container">
-                <h1 class="ui dividing centered header">{this.state.content}</h1>
+                <div className="main ui container">
+                <h1 className="ui dividing centered header">{this.state.content}</h1>
                 <MainContent
                     content={this.state.content}
                     updateTester={this.updateTester}
@@ -203,5 +204,31 @@ class TestContent extends React.Component {
     }
 }
 
-
+function getLicense(data) {
+    if (data == 0) {
+        return "B";
+    } else if (data == 1) {
+        return "A2";
+    } else if (data == 2) {
+        return "A1";
+    } else if (data == 3) {
+        return "A";
+    } else if (data == 4) {
+        return "C1";
+    } else if (data == 5) {
+        return "C";
+    } else if (data == 6) {
+        return "D"
+    } else if (data == 7) {
+        return "D1";
+    } else if (data == 8) {
+        return "D2";
+    } else if (data == 9) {
+        return "D3";
+    } else if (data == 10) {
+        return "E";
+    } else if (data == 11) {
+        return "1";
+    }
+}
 

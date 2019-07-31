@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Config>
+  <AdminPassword></AdminPassword>
+  <AdminUser>Admin</AdminUser>
+  <FirstOpenProgram>false</FirstOpenProgram>
+  <TestId>1</TestId>
+  <MinLessons>16</MinLessons>
+  <MinTesterAge>40</MinTesterAge>
+  <MinTimeBetweenTests>14</MinTimeBetweenTests>
+  <MinTraineeAge>17</MinTraineeAge>
+  <MinimumCriteria>3</MinimumCriteria>
+  <PercentOfCriteriaToPassTest>70</PercentOfCriteriaToPassTest>
+  <Theme>Light</Theme>
+  <Color>Steel</Color>
+  <Criteria>
+    <Criterion>Kept Distance</Criterion>
+    <Criterion>Parking</Criterion>
+    <Criterion>Reverse Parking</Criterion>
+    <Criterion>Check Mirrors</Criterion>
+    <Criterion>Used Signal</Criterion>
+    <Criterion>Stopped at Red</Criterion>
+    <Criterion>Stopped At Cross Walk</Criterion>
+    <Criterion>Right Turn</Criterion>
+    <Criterion>Immediate Stop</Criterion>
+  </Criteria>
+</Config>
