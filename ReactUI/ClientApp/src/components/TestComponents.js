@@ -67,7 +67,8 @@ class UpdateTest extends React.Component {
             { id: '8', type: "Stopped At Cross Walk", pass: false },
             { id: '9', type: "Right Turn", pass: false },
             { id: '10', type: "Immediate Stop", pass: false },
-            { id: '11', type: "Drove Carfully", pass: false }]
+            { id: '11', type: "Drove Carfully", pass: false }],
+        loading:""
     };
     handleChange = (e) => {
         var criteria = this.state.criteria.map((cri) => {
@@ -86,9 +87,11 @@ class UpdateTest extends React.Component {
         test['licenseType'] = getLicense(test['licenseType']);
 
         TestClient.updateTests(test, this.hadleUpdated);
+        this.setState({ loading: " loading" });
     };
     hadleUpdated = () => {
         this.props.handleUpdate();
+        this.setState({ loading: "" });
     }
     render() {
         var criteria = this.state.criteria.map((cri) => {
@@ -122,7 +125,7 @@ class UpdateTest extends React.Component {
                     <button className="ui button" onClick={this.props.handleDiscard}>
                         Discard
                 </button>
-                    <button className="ui red button" onClick={this.update}>
+                    <button className={"ui blue" + this.state.loading + " button"} onClick={this.update}>
                         Update
                 </button>
                 </div>

@@ -124,7 +124,7 @@ export default class MainComponent extends Component {
             return test;
 
         });
-        this.setState({ tests: tests });
+        this.setState({ tests: tests, loadingTests: false });
     };
     constructor(props) {
         super(props);
@@ -135,7 +135,7 @@ export default class MainComponent extends Component {
 
     }
     render() {
-        if (this.state.loadingTesters || this.state.loadingTrainees) {
+        if (this.state.loadingTesters || this.state.loadingTrainees || this.state.loadingTests) {
             var mainContent = (
                 <div className='ui unstackable items'>
                     <MenuBar

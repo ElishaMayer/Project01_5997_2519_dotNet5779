@@ -70,7 +70,7 @@ namespace ReactUI.Controllers
                         catch (Exception ex) { };
                     }
                 }
-                // System.Threading.Thread.Sleep(2000);
+                 System.Threading.Thread.Sleep(2000);
                 test.ActualTestTime = DateTime.Now;
                 bl.UpdateTest(test);
                 return "OK";
