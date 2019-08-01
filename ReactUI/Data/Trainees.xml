@@ -106,26 +106,6 @@
     <CollectionLicenseTypeLearning />
   </trainee>
   <trainee>
-    <id>32087835</id>
-    <firstName>Efy</firstName>
-    <lastName>Tei</lastName>
-    <gender>Male</gender>
-    <address>כי"ח, טבריה, ישראל</address>
-    <birthDate>1990-01-19T00:00:00</birthDate>
-    <emailAddress>efraimt@gmail.com</emailAddress>
-    <phoneNum>0549446170</phoneNum>
-    <teacherName>חירד</teacherName>
-    <schoolName>רמזור</schoolName>
-    <CollectionLicenseTypeLearning>
-      <licenseTypeLearning>
-        <gearType>Automatic</gearType>
-        <license>A</license>
-        <numOfLessons>25</numOfLessons>
-        <readyForTest>true</readyForTest>
-      </licenseTypeLearning>
-    </CollectionLicenseTypeLearning>
-  </trainee>
-  <trainee>
     <id>312731326</id>
     <firstName>Chezki</firstName>
     <lastName>Botwinick</lastName>
@@ -233,46 +213,6 @@
         <gearType>Automatic</gearType>
         <license>B</license>
         <numOfLessons>22</numOfLessons>
-        <readyForTest>true</readyForTest>
-      </licenseTypeLearning>
-    </CollectionLicenseTypeLearning>
-  </trainee>
-  <trainee>
-    <id>308378702</id>
-    <firstName>Haya</firstName>
-    <lastName>Weissfish</lastName>
-    <gender>Female</gender>
-    <address>Flieman Street, חיפה, ישראל</address>
-    <birthDate>1995-05-25T00:00:00</birthDate>
-    <emailAddress>haya@aboul.co.il</emailAddress>
-    <phoneNum>0598456423</phoneNum>
-    <teacherName>Yoav</teacherName>
-    <schoolName>Shlomo</schoolName>
-    <CollectionLicenseTypeLearning>
-      <licenseTypeLearning>
-        <gearType>Automatic</gearType>
-        <license>A</license>
-        <numOfLessons>25</numOfLessons>
-        <readyForTest>true</readyForTest>
-      </licenseTypeLearning>
-    </CollectionLicenseTypeLearning>
-  </trainee>
-  <trainee>
-    <id>37982519</id>
-    <firstName>Fredman</firstName>
-    <lastName>Jacob</lastName>
-    <gender>Male</gender>
-    <address>ירושלים, בת ים, ישראל</address>
-    <birthDate>1985-01-12T00:00:00</birthDate>
-    <emailAddress>abc@gmail.com</emailAddress>
-    <phoneNum />
-    <teacherName>Nechama</teacherName>
-    <schoolName>Shachar</schoolName>
-    <CollectionLicenseTypeLearning>
-      <licenseTypeLearning>
-        <gearType>Automatic</gearType>
-        <license>B</license>
-        <numOfLessons>25</numOfLessons>
         <readyForTest>true</readyForTest>
       </licenseTypeLearning>
     </CollectionLicenseTypeLearning>
@@ -405,6 +345,52 @@
         <gearType>Automatic</gearType>
         <license>D</license>
         <numOfLessons>33</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+    </CollectionLicenseTypeLearning>
+  </trainee>
+  <trainee>
+    <id>37982519</id>
+    <firstName>Fredman</firstName>
+    <lastName>Jacob</lastName>
+    <gender>Male</gender>
+    <address>ירושלים, בת ים, ישראל    </address>
+    <birthDate>1985-01-11T22:00:00Z</birthDate>
+    <emailAddress>abc@gmail.com</emailAddress>
+    <phoneNum></phoneNum>
+    <teacherName>Nechama</teacherName>
+    <schoolName>Shachar</schoolName>
+    <CollectionLicenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>B</license>
+        <numOfLessons>25</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+    </CollectionLicenseTypeLearning>
+  </trainee>
+  <trainee>
+    <id>308378702</id>
+    <firstName>Haya</firstName>
+    <lastName>Weissfish</lastName>
+    <gender>Female</gender>
+    <address>Flieman Street, חיפה, ישראל  </address>
+    <birthDate>1995-05-24T21:00:00Z</birthDate>
+    <emailAddress>haya@aboul.co.il</emailAddress>
+    <phoneNum>0598456423</phoneNum>
+    <teacherName>Yoav</teacherName>
+    <schoolName>Shlomo</schoolName>
+    <CollectionLicenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>A</license>
+        <numOfLessons>25</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Manual</gearType>
+        <license>A1</license>
+        <numOfLessons>80</numOfLessons>
         <readyForTest>true</readyForTest>
       </licenseTypeLearning>
     </CollectionLicenseTypeLearning>

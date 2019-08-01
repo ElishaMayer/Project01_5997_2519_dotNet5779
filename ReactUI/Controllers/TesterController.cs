@@ -28,7 +28,7 @@ namespace ReactUI.Controllers
         [HttpGet("{id}")]
         public Tester Get(int id)
         {
-            return bl.AllTesters.FirstOrDefault((tester)=>tester.Id==id);
+            return bl.AllTesters.FirstOrDefault((tester) => tester.Id == id);
         }
 
         // POST: api/Tester
@@ -54,20 +54,37 @@ namespace ReactUI.Controllers
                     {
                         prop.SetValue(tester, new Address((value[ToLower(prop.Name)].ToString())));
                     }
-                    else if (prop.Name != "Schedule")
+                    else if (prop.Name == "Schedule")
+                    {
+                        tester.Schedule = new WeekSchedule();
+                        for (int day = 0; day < 5; day++)
+                        {
+                            for (int hour = 9; hour < 16; hour++)
+                            {
+                                try
+                                {
+                                    tester.Schedule.Days[day].Hours[hour] = (bool)value["schedule"]["days"][day]["hours"][hour];
+                                }
+                                catch (Exception ex) { }
+                            }
+                        }
+                    }
+                    else
                     {
                         try
                         {
                             prop.SetValue(tester, Convert.ChangeType((value[ToLower(prop.Name)]), prop.PropertyType));
                         }
-                        catch (Exception ex) { }
+                        catch (Exception ex) { };
                     }
                 }
-                tester.Schedule = new WeekSchedule();
                 tester.LicenseType = new List<LicenseType>();
+                System.Threading.Thread.Sleep(2000);
+
                 bl.AddTester(tester);
                 return "OK";
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 return ex.Message;
             }
@@ -97,7 +114,18 @@ namespace ReactUI.Controllers
                     {
                         prop.SetValue(tester, new Address((value[ToLower(prop.Name)].ToString())));
                     }
-                    else if (prop.Name != "Schedule")
+                    else if (prop.Name == "Schedule")
+                    {
+                        tester.Schedule = new WeekSchedule();
+                        for (int day = 0; day < 5; day++)
+                        {
+                            for (int hour = 9; hour < 16; hour++)
+                            {
+                                tester.Schedule.Days[day].Hours[hour] = (bool)value["schedule"]["days"][day]["hours"][hour];
+                            }
+                        }
+                    }
+                    else
                     {
                         try
                         {
@@ -106,9 +134,8 @@ namespace ReactUI.Controllers
                         catch (Exception ex) { };
                     }
                 }
-                tester.Schedule = new WeekSchedule();
                 tester.LicenseType = new List<LicenseType>();
-                System.Threading.Thread.Sleep(5000);
+                System.Threading.Thread.Sleep(2000);
 
                 bl.UpdateTester(tester);
                 return "OK";
@@ -128,9 +155,10 @@ namespace ReactUI.Controllers
                 Tester tester = new Tester();
                 tester.Id = (uint)id;
                 bl.RemoveTester(tester);
-                System.Threading.Thread.Sleep(5000);
+                System.Threading.Thread.Sleep(2000);
                 return "OK";
-            }catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 return ex.Message;
             }

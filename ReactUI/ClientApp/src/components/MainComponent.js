@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 //import { start } from 'repl';
 import { TesterForm, TesterContent } from './TesterComponents';
 import { TesterClient } from './TesterClient';
+import { TraineeClient } from './TraineeClient';
 import { TraineeForm, TraineeContent } from './TraineeComponents';
 
 import { MenuBar } from './Menu';
@@ -15,34 +16,7 @@ export default class MainComponent extends Component {
         testers:
             [],
         trainees:
-            [{
-                id: 18, firstName: "trainne",
-                lastName: "mayer",
-                gender: "male",
-                phoneNumber: "0530009933",
-                email: "elisja@gmail.com",
-                address: "Beit Shemesh Hertzel 631",
-                birthDate: new Date(1995, 8, 18),
-                license: [
-                    { numberOfLessons: 5, license: 'A', gearType: 'Auto', readyForTest: false },
-                    { numberOfLessons: 30, license: 'B', gearType: 'Manual', readyForTest: true }],
-                schoolName: "Gil",
-                teacherName:"Meir"
-            },
-            {
-                id: 319185997, firstName: "elisja",
-                lastName: "mayer",
-                gender: "male",
-                phoneNumber: "0530009933",
-                email: "elisja@gmail.com",
-                address: "Beit Shemesh Hertzel 631",
-                birthDate: new Date(1995, 8, 18),
-                license: [
-                    { numberOfLessons: 5, license: 'C', gearType: 'Auto', readyForTest: false },
-                    { numberOfLessons: 30, license: 'D', gearType: 'Manual', readyForTest: true }],
-                schoolName: "Gil",
-                teacherName: "Meir"
-            }],
+            [],
         addTester: false,
         addTrainee: false,
         content:"Trainees"
@@ -56,23 +30,25 @@ export default class MainComponent extends Component {
             }
         });
         this.setState({ testers: testers });
-        TesterClient.getTesters(this.handleLoad);
+        TesterClient.getTesters(this.handleLoadTesters);
 
     };
     addTester = (addTester) => {
-        this.setState({ testers: this.state.testers.concat(addTester), addTester: false })
+        this.setState({ testers: this.state.testers.concat(addTester), addTester: false });
+        TesterClient.getTesters(this.handleLoadTesters);
     };
     removeTester = (id) => {
         var testers = this.state.testers.filter((tester) => {
             return (tester.id !== id)
         });
-        this.setState({ testers: testers })
+        this.setState({ testers: testers });
+        TesterClient.getTesters(this.handleLoadTesters);
     };
     addTesterClick = () => {
-        this.setState({ addTester: true })
+        this.setState({ addTester: true });
     };
     discardTesterClick = () => {
-        this.setState({ addTester: false })
+        this.setState({ addTester: false });
     };
 
     updateTrainee = (updateTrainee) => {
@@ -84,9 +60,11 @@ export default class MainComponent extends Component {
             }
         });
         this.setState({ trainees: trainees });
+        TraineeClient.getTrainees(this.handleLoadTrainees);
     };
     addTrainee = (addTrainee) => {
         this.setState({ trainees: this.state.trainees.concat(addTrainee), addTrainee: false });
+        TraineeClient.getTrainees(this.handleLoadTrainees);
     };
     removeTrainee = (id) => {
         var trainees = this.state.trainees.filter((trainee) => {
@@ -103,7 +81,7 @@ export default class MainComponent extends Component {
     handleChangeContent = (content) => {
         this.setState({ content: content, addTrainee: false, addTester:false});
     };
-    handleLoad = (testers) => {
+    handleLoadTesters = (testers) => {
         testers = testers.map((tester) => {
             tester['birthDate'] = new Date(tester['birthDate']);
             tester['license'] = tester['licenseTypeTeaching'];
@@ -122,9 +100,38 @@ export default class MainComponent extends Component {
         });
         this.setState({ testers: testers });
     }
+    handleLoadTrainees = (trainees) => {
+        trainees = trainees.map((trainee) => {
+            trainee['birthDate'] = new Date(trainee['birthDate']);
+            trainee['license'] = trainee['licenseTypeLearning'];
+            trainee['email'] = trainee['emailAddress'];
+            if (trainee['gender'] == 0) {
+                trainee['gender'] = 'Male';
+            } else if (trainee['gender'] == 1) {
+                trainee['gender'] = 'Female';
+            } else if (trainee['gender'] == 2) {
+                trainee['gender'] = 'Other';
+            }
+            trainee['license'] = trainee['license'].map((license) => {
+                license['license'] = getLicense(license['license']);
+                if (license['gearType'] === 0) {
+                    license['gearType'] = 'Auto';
+                } else {
+                    license['gearType'] = 'Manual';
+                }
+                return license;
+            } );
+            trainee['address'] = trainee['address']['city'] + ' ' + trainee['address']['street'] + ' ' + trainee['address']['building'];
+
+            return trainee;
+        });
+        this.setState({ trainees: trainees });
+    }
     constructor(props) {
         super(props);
-        TesterClient.getTesters(this.handleLoad);
+        TesterClient.getTesters(this.handleLoadTesters);
+        TraineeClient.getTrainees(this.handleLoadTrainees);
+
     }
     render() {
 
@@ -142,6 +149,7 @@ export default class MainComponent extends Component {
                     trainee={{ birthDate: (new Date(Date.now())) }}
                     onDiscardTrainee={this.discardTraineeClick}
                     onSaveTrainee={this.addTrainee}
+                    add={true}
                 />);
         } else{
             var mainContent = (

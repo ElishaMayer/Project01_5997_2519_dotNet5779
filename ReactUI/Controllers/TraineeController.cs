@@ -47,8 +47,18 @@ namespace ReactUI.Controllers
                 {
                     if ((value[ToLower(prop.Name)]) is JArray)
                     {
-                       // var list = (value[ToLower(prop.Name)]).ToObject<List<BE.LicenseType>>();
-                       // prop.SetValue(trainee, list);
+                        var list = (value[ToLower(prop.Name)]).Select((license)=> {
+                            TrainingDetails td = new TrainingDetails();
+                            td.GearType = (Gear)Convert.ChangeType((license["gearType"]), typeof(Gear));
+                            td.License = (LicenseType)Convert.ChangeType(license["license"], typeof(LicenseType));
+                            td.NumberOfLessons = (int)Convert.ChangeType((license["numberOfLessons"]), typeof(int));
+                            return td; 
+                        });
+                        trainee.LicenseTypeLearning = new List<TrainingDetails>();
+                        foreach(var td in list)
+                        {
+                            trainee.LicenseTypeLearning.Add(td);
+                        }
                     }
                     else if (prop.Name == "Address")
                     {
@@ -64,6 +74,7 @@ namespace ReactUI.Controllers
                     }
                 }
                 trainee.LicenseType = new List<LicenseType>();
+                System.Threading.Thread.Sleep(2000);
                 bl.AddTrainee(trainee);
                 return "OK";
             }
@@ -74,17 +85,77 @@ namespace ReactUI.Controllers
 
         }
 
-        //// PUT: api/Trainee/5
-        //[HttpPut("{id}")]
-        //public void Put(int id, [FromBody] string value)
-        //{
-        //}
+        // PUT: api/Trainee/5
+        [HttpPut()]
+        public string Put(int id, [FromBody] Object val) { 
+             try
+            {
+                Trainee trainee = new Trainee();
+        var value = (Newtonsoft.Json.Linq.JObject)val;
+                if (!BE.Tools.CheckID_IL(uint.Parse((String) value["id"])))
+                    return "Invalid Id!";
 
-        //// DELETE: api/ApiWithActions/5
-        //[HttpDelete("{id}")]
-        //public void Delete(int id)
-        //{
-        //}
+                //   BL.FactoryBl.GetObject.AddTester(value);
+                foreach (var prop in trainee.GetType().GetProperties())
+                {
+                    if ((value[ToLower(prop.Name)]) is JArray)
+                    {
+                        var list = (value[ToLower(prop.Name)]).Select((license) => {
+                            TrainingDetails td = new TrainingDetails();
+                            td.GearType = (Gear)Convert.ChangeType((license["gearType"]), typeof(Gear));
+                            td.License = (LicenseType)Convert.ChangeType(license["license"], typeof(LicenseType));
+                            td.NumberOfLessons = (int)Convert.ChangeType((license["numberOfLessons"]), typeof(int));
+                            return td;
+                        });
+        trainee.LicenseTypeLearning = new List<TrainingDetails>();
+                        foreach(var td in list)
+                        {
+                            trainee.LicenseTypeLearning.Add(td);
+                        }
+}
+                    else if (prop.Name == "Address")
+                    {
+                        prop.SetValue(trainee, new Address((value[ToLower(prop.Name)].ToString())));
+                    }
+                    else if (prop.Name != "Schedule")
+                    {
+                        try
+                        {
+                            prop.SetValue(trainee, Convert.ChangeType((value[ToLower(prop.Name)]), prop.PropertyType));
+                        }
+                        catch (Exception ex) { }
+                    }
+                }
+                trainee.LicenseType = new List<LicenseType>();
+                System.Threading.Thread.Sleep(2000);
+                bl.UpdateTrainee(trainee);
+                return "OK";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+
+        
+        }
+
+        // DELETE: api/ApiWithActions/5
+        [HttpDelete("{id}")]
+        public string Delete(int id)
+        {
+            try
+            {
+                Trainee trainee = new Trainee();
+                trainee.Id = (uint)id;
+                bl.RemoveTrainee(trainee);
+                System.Threading.Thread.Sleep(2000);
+                return "OK";
+            }
+            catch (Exception ex)
+            {
+                return ex.Message;
+            }
+        }
         private string ToLower(string str)
         {
             if (str != string.Empty && char.IsUpper(str[0]))

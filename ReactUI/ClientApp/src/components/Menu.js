@@ -39,7 +39,6 @@ class TesterMenu extends React.Component {
                 <div className="menu">
                     <div className="item" onClick={this.addTester}>Add New</div>
                     <div className="item" onClick={this.props.changeTo}>Show All Testers</div>
-                    <div className="item">Send Email</div>
                 </div>
             </div>
         );
@@ -58,7 +57,6 @@ class TraineeMenu extends React.Component {
                 <div className="menu">
                     <div className="item" onClick={this.addTrainee}>Add New</div>
                     <div className="item" onClick={this.props.changeTo}>Show All Trainees</div>
-                    <div className="item">Send Email</div>
                 </div>
             </div>
         );
@@ -73,7 +71,6 @@ class TestMenu extends React.Component {
                     <i className="dropdown icon"></i>
                 <div className="menu">
                     <div className="item">Add New</div>
-                    <div className="item">Send Email</div>
                 </div>
             </div>
         );

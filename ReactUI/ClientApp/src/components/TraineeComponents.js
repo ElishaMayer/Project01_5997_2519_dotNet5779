@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { TraineeClient } from './TraineeClient';
+
 
 class TraineeContent extends React.Component {
     state = {
@@ -19,8 +21,8 @@ class TraineeContent extends React.Component {
     };
     handleDelete = (id) => {
         console.log('delete ' + id);
-        this.props.deleteTrainee(id);
         this.setState({ showTable: true });
+        this.props.deleteTrainee(id);
     };
     render() {
         if (this.state.traineeId === null) {
@@ -42,6 +44,7 @@ class TraineeContent extends React.Component {
                     onDiscardTrainee={this.handleDiscard}
                     onSaveTrainee={this.handleUpdate}
                     onDeleteTrainee={this.handleDelete}
+                    add={false}
                 />
             );
         }
@@ -55,6 +58,7 @@ class TraineeTable extends React.Component {
         this.props.hadleRowClick(id);
     };
     render() {
+        var trainees = this.props.trainees;
         var trainees = this.props.trainees.map((trainee) => {
             return (<TraineeRow
                 trainee={trainee}
@@ -130,7 +134,9 @@ class TraineeForm extends React.Component {
         teacherName: this.props.trainee.teacherName || '',
         schoolName: this.props.trainee.schoolName || '',
         validation: { message: { isVisible: false, Header: "", body: "" } },
-        error: { id: '', firsName: '', lastName: '' }
+        error: { id: '', firsName: '', lastName: '' },
+        loadingDelete: "ui red button",
+        loadingUpdate: "ui primary button"
 
     };
     handleChange = (e) => {
@@ -172,9 +178,33 @@ class TraineeForm extends React.Component {
             data.error.id = " error";
         }
         if (errorMessage.length == 0) {
-            delete this.state.validation;
             this.state.birthDate = new Date(this.state.birthDate.year, this.state.birthDate.month, this.state.birthDate.day);
-            this.props.onSaveTrainee(this.state);
+            this.state['emailAddress'] = this.state['email'];
+            if (this.state['gender'] == 'Male') {
+                this.state['gender'] = 0;
+            } else if (this.state['gender'] == 'Female') {
+                this.state['gender'] = 1;
+            } else if (this.state['gender'] == 'Other') {
+                this.state['gender'] = 2;
+            } else {
+                this.state['gender'] = 0;
+            }
+            this.state['licenseTypeLearning'] = this.state['license'];
+            this.state['licenseTypeLearning'] = this.state['licenseTypeLearning'].map((license) => {
+                license['license'] = getLicense(license['license']);
+                if (license['gearType'] === 'Auto') {
+                    license['gearType'] = 0;
+                } else {
+                    license['gearType'] = 1;
+                }
+                return license;
+            });
+            this.setState({ loadingUpdate: "ui primary loading button" });
+            if (this.props.add) {
+                TraineeClient.createTrainees(this.state, this.handleSaveToServer);
+            } else {
+                TraineeClient.updateTrainees(this.state, this.handleSaveToServer);
+            }
         } else {
             data.validation.message.body = errorMessage.map((msg) => {
                 return <li>{msg}</li>;
@@ -185,12 +215,40 @@ class TraineeForm extends React.Component {
         }
     };
 
+    handleSaveToServer = (message) => {
+        console.log(message);
+        if (message === "OK") {
+            this.props.onSaveTrainee(this.state);
+        } else {
+            this.setState({ loadingUpdate: "ui primary button" });
+            var data = this.state;
+            data.validation.message.body = (<li>{message}</li>);
+            data.validation.message.Header = "Tester Error."
+            data.validation.message.isVisible = true;
+            this.setState(data);
+        }
+    }
+
+    handleDeleteToServer = (message) => {
+        if (message === "OK") {
+            this.props.onDeleteTrainee(this.state.id);
+        } else {
+            this.setState({ loadingDelete: "ui red button" });
+            var data = this.state;
+            data.validation.message.body = (<li>{message}</li>);
+            data.validation.message.Header = "Tester Error."
+            data.validation.message.isVisible = true;
+            this.setState(data);
+        }
+    };
+
     handleDiscard = () => {
         this.props.onDiscardTrainee();
     };
 
     handleDelete = () => {
-        this.props.onDeleteTrainee(this.state.id);
+        this.setState({ loadingDelete: "ui red loading button" });
+        TraineeClient.deleteTrainees(this.state.id, this.handleDeleteToServer);
     };
 
     handleChangeLisence = (updated) => {
@@ -203,7 +261,7 @@ class TraineeForm extends React.Component {
         const button = trainee.id ? "Update" : "Save";
         const disabled = trainee.id ? " disabled" : "";
         const deleteButton = trainee.id ? (
-            <button className="ui red right button" onClick={this.handleDelete}>
+            <button className={this.state.loadingDelete} onClick={this.handleDelete}>
                 Delete Trainee
                 </button>) : "";
 
@@ -327,7 +385,7 @@ class TraineeForm extends React.Component {
                 </form>
                 {message}
                 <div className="ui segment">
-                    <button className="ui primary button" onClick={this.handleSave} >
+                    <button className={this.state.loadingUpdate} onClick={this.handleSave} >
                         {button}
                     </button>
                     <button className="ui button" onClick={this.handleDiscard}>
@@ -483,7 +541,33 @@ class LicenseRow extends React.Component {
     }
 }
 
-
+function getLicense(data) {
+    if (data === "B") {
+        return 0;
+    } else if (data === "A2") {
+        return 1;
+    } else if (data === "A1") {
+        return 2;
+    } else if (data === "A") {
+        return 3;
+    } else if (data === "C1") {
+        return 4;
+    } else if (data === "C") {
+        return 5;
+    } else if (data === "D") {
+        return 6;
+    } else if (data === "D1") {
+        return 7;
+    } else if (data === "D2") {
+        return 8;
+    } else if (data === "D3") {
+        return 9;
+    } else if (data === "E") {
+        return 10;
+    } else if (data === "1") {
+        return 11;
+    }
+}
 
 function checkId(id) {
     if (id == 0) return false;

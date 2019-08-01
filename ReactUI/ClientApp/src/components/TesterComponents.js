@@ -135,10 +135,11 @@ class TesterForm extends React.Component {
         experience: this.props.tester.experience || 0,
         maxDistance: this.props.tester.maxDistance || 0,
         maxWeekExams: this.props.tester.maxWeekExams || 0,
+        schedule: this.props.tester.schedule || { days: [{ hours: [] }, { hours: [] }, { hours: [] }, { hours: [] }, { hours: [] }]},
         validation: { message: { isVisible: false, Header: "", body: "" } },
         error: { id: '', firsName: '', lastName: '' },
         loadingDelete: "ui red button",
-        loadingUpdate:"ui primary button"
+        loadingUpdate: "ui primary button"
     };
     handleChange = (e) => {
         var update = {};
@@ -231,7 +232,7 @@ class TesterForm extends React.Component {
                 day: this.state.birthDate.getDate()
             };
             var data = this.state;
-            data.validation.message.body=(<li>{message}</li>);
+            data.validation.message.body = (<li>{message}</li>);
             data.validation.message.Header = "Tester Error."
             data.validation.message.isVisible = true;
             this.setState(data);
@@ -260,6 +261,10 @@ class TesterForm extends React.Component {
         this.setState({ loadingDelete: "ui red loading button" });
         TesterClient.deleteTester(this.state.id, this.handleTesterDeletedOnServer);
     };
+
+    scheduleUpdated = (schedule) => {
+        this.setState({ schedule: schedule.schedule });
+    }
 
     render() {
         var state = this.state;
@@ -389,16 +394,100 @@ class TesterForm extends React.Component {
                     <LicenseCheckBox
                         licenses={this.state.license}
                         licenseChaged={this.handleLisenceChange} />
+                    <Schedule
+                        schedule={this.state.schedule}
+                        scheduleUpdated={this.scheduleUpdated}/>
                 </form>
                 {message}
+                <div className="ui segment">
                 <button className={this.state.loadingUpdate} onClick={this.handleSave} >
                     {button}
                 </button>
                 <button className="ui button" onClick={this.handleDiscard}>
                     Discard
                 </button>
-                {deleteButton}
+                    {deleteButton}
+                    </div>
             </div>
+        );
+    }
+}
+
+class Schedule extends React.Component {
+    state = { schedule: this.props.schedule }
+
+    handleClick = (e) => {
+        this.state.schedule.days[parseInt(e.target.id[0])].hours[parseInt(e.target.id[2] + (e.target.id[3] ? e.target.id[3]:''))] =
+            !this.state.schedule.days[parseInt(e.target.id[0])].hours[parseInt(e.target.id[2] + (e.target.id[3] ? e.target.id[3] : ''))];
+        this.setState(this.state);
+        this.props.scheduleUpdated(this.state);
+    };
+    render() {
+        return (
+            <div className="ui segment">
+            <table className="ui compact celled table">
+                <thead>
+                    <tr>
+                        <th>Sunday</th>
+                        <th>Monday</th>
+                        <th>Thursday</th>
+                        <th>Wensday</th>
+                        <th>Thursday</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th><button className={this.state.schedule.days[0].hours[9] ? "fluid red ui button" : "fluid ui button"} id="0-9" onClick={this.handleClick} type="button"> 9:00</button></th>
+                        <th><button className={this.state.schedule.days[1].hours[9] ? "fluid red ui button" : "fluid ui button"} id="1-9" onClick={this.handleClick} type="button"> 9:00</button></th>
+                        <th><button className={this.state.schedule.days[2].hours[9] ? "fluid red ui button" : "fluid ui button"} id="2-9" onClick={this.handleClick} type="button"> 9:00</button></th>
+                        <th><button className={this.state.schedule.days[3].hours[9] ? "fluid red ui button" : "fluid ui button"} id="3-9" onClick={this.handleClick} type="button"> 9:00</button></th>
+                        <th><button className={this.state.schedule.days[4].hours[9] ? "fluid red ui button" : "fluid ui button"} id="4-9" onClick={this.handleClick} type="button"> 9:00</button></th>
+                    </tr>
+                    <tr>
+                        <th><button className={this.state.schedule.days[0].hours[10] ? "fluid red ui button" : "fluid ui button"} id="0-10" onClick={this.handleClick} type="button"> 10:00</button></th>
+                        <th><button className={this.state.schedule.days[1].hours[10] ? "fluid red ui button" : "fluid ui button"} id="1-10" onClick={this.handleClick} type="button"> 10:00</button></th>
+                        <th><button className={this.state.schedule.days[2].hours[10] ? "fluid red ui button" : "fluid ui button"} id="2-10" onClick={this.handleClick} type="button"> 10:00</button></th>
+                        <th><button className={this.state.schedule.days[3].hours[10] ? "fluid red ui button" : "fluid ui button"} id="3-10" onClick={this.handleClick} type="button"> 10:00</button></th>
+                        <th><button className={this.state.schedule.days[4].hours[10] ? "fluid red ui button" : "fluid ui button"} id="4-10" onClick={this.handleClick} type="button"> 10:00</button></th>
+                    </tr>
+                    <tr>
+                        <th><button className={this.state.schedule.days[0].hours[11] ? "fluid red ui button" : "fluid ui button"} id="0-11" onClick={this.handleClick} type="button"> 11:00</button></th>
+                        <th><button className={this.state.schedule.days[1].hours[11] ? "fluid red ui button" : "fluid ui button"} id="1-11" onClick={this.handleClick} type="button"> 11:00</button></th>
+                        <th><button className={this.state.schedule.days[2].hours[11] ? "fluid red ui button" : "fluid ui button"} id="2-11" onClick={this.handleClick} type="button"> 11:00</button></th>
+                        <th><button className={this.state.schedule.days[3].hours[11] ? "fluid red ui button" : "fluid ui button"} id="3-11" onClick={this.handleClick} type="button"> 11:00</button></th>
+                        <th><button className={this.state.schedule.days[4].hours[11] ? "fluid red ui button" : "fluid ui button"} id="4-11" onClick={this.handleClick} type="button"> 11:00</button></th>
+                    </tr>
+                    <tr>
+                        <th><button className={this.state.schedule.days[0].hours[12] ? "fluid red ui button" : "fluid ui button"} id="0-12" onClick={this.handleClick} type="button"> 12:00</button></th>
+                        <th><button className={this.state.schedule.days[1].hours[12] ? "fluid red ui button" : "fluid ui button"} id="1-12" onClick={this.handleClick} type="button"> 12:00</button></th>
+                        <th><button className={this.state.schedule.days[2].hours[12] ? "fluid red ui button" : "fluid ui button"} id="2-12" onClick={this.handleClick} type="button"> 12:00</button></th>
+                        <th><button className={this.state.schedule.days[3].hours[12] ? "fluid red ui button" : "fluid ui button"} id="3-12" onClick={this.handleClick} type="button"> 12:00</button></th>
+                        <th><button className={this.state.schedule.days[4].hours[12] ? "fluid red ui button" : "fluid ui button"} id="4-12" onClick={this.handleClick} type="button"> 12:00</button></th>
+                    </tr>
+                    <tr>
+                        <th><button className={this.state.schedule.days[0].hours[13] ? "fluid red ui button" : "fluid ui button"} id="0-13" onClick={this.handleClick} type="button"> 13:00</button></th>
+                        <th><button className={this.state.schedule.days[1].hours[13] ? "fluid red ui button" : "fluid ui button"} id="1-13" onClick={this.handleClick} type="button"> 13:00</button></th>
+                        <th><button className={this.state.schedule.days[2].hours[13] ? "fluid red ui button" : "fluid ui button"} id="2-13" onClick={this.handleClick} type="button"> 13:00</button></th>
+                        <th><button className={this.state.schedule.days[3].hours[13] ? "fluid red ui button" : "fluid ui button"} id="3-13" onClick={this.handleClick} type="button"> 13:00</button></th>
+                        <th><button className={this.state.schedule.days[4].hours[13] ? "fluid red ui button" : "fluid ui button"} id="4-13" onClick={this.handleClick} type="button"> 13:00</button></th>
+                    </tr>
+                    <tr>
+                        <th><button className={this.state.schedule.days[0].hours[14] ? "fluid red ui button" : "fluid ui button"} id="0-14" onClick={this.handleClick} type="button"> 14:00</button></th>
+                        <th><button className={this.state.schedule.days[1].hours[14] ? "fluid red ui button" : "fluid ui button"} id="1-14" onClick={this.handleClick} type="button"> 14:00</button></th>
+                        <th><button className={this.state.schedule.days[2].hours[14] ? "fluid red ui button" : "fluid ui button"} id="2-14" onClick={this.handleClick} type="button"> 14:00</button></th>
+                        <th><button className={this.state.schedule.days[3].hours[14] ? "fluid red ui button" : "fluid ui button"} id="3-14" onClick={this.handleClick} type="button"> 14:00</button></th>
+                        <th><button className={this.state.schedule.days[4].hours[14] ? "fluid red ui button" : "fluid ui button"} id="4-14" onClick={this.handleClick} type="button"> 14:00</button></th>
+                    </tr>
+                    <tr>
+                        <th><button className={this.state.schedule.days[0].hours[15] ? "fluid red ui button" : "fluid ui button"} id="0-15" onClick={this.handleClick} type="button"> 15:00</button></th>
+                        <th><button className={this.state.schedule.days[1].hours[15] ? "fluid red ui button" : "fluid ui button"} id="1-15" onClick={this.handleClick} type="button"> 15:00</button></th>
+                        <th><button className={this.state.schedule.days[2].hours[15] ? "fluid red ui button" : "fluid ui button"} id="2-15" onClick={this.handleClick} type="button"> 15:00</button></th>
+                        <th><button className={this.state.schedule.days[3].hours[15] ? "fluid red ui button" : "fluid ui button"} id="3-15" onClick={this.handleClick} type="button"> 15:00</button></th>
+                        <th><button className={this.state.schedule.days[4].hours[15] ? "fluid red ui button" : "fluid ui button"} id="4-15" onClick={this.handleClick} type="button"> 15:00</button></th>
+                    </tr>
+                </tbody>
+                </table>
+                </div>
         );
     }
 }

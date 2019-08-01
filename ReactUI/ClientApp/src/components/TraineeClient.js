@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
 var TraineeClient = (function () {
-  function getTrainee(success) {
+  function getTrainees(success) {
       return fetch('/api/Trainee', {
       headers: {
         Accept: 'application/json',
@@ -11,7 +11,7 @@ var TraineeClient = (function () {
       .then(success);
   }
 
-    function createTrainee(data,success) {
+    function createTrainees(data,success) {
         return fetch('/api/Trainee', {
           method: 'post',
           body: JSON.stringify(data),
@@ -25,7 +25,7 @@ var TraineeClient = (function () {
 
   }
 
-    function updateTrainee(data,success) {
+    function updateTrainees(data,success) {
         return fetch('/api/Trainee', {
       method: 'put',
       body: JSON.stringify(data),
@@ -38,7 +38,7 @@ var TraineeClient = (function () {
         .then(success);
   }
 
-    function deleteTrainee(id, success) {
+    function deleteTrainees(id, success) {
         return fetch('/api/Trainee/'+id, {
       method: 'delete',
       headers: {
@@ -67,11 +67,11 @@ var TraineeClient = (function () {
   }
 
   return {
-    getTesters,
-    createTester,
-    updateTester,
-    deleteTester
+    getTrainees,
+      createTrainees,
+      updateTrainees,
+      deleteTrainees
   };
 }());
 
-export { Client };
+export { TraineeClient };

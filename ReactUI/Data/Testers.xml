@@ -131,35 +131,6 @@
     <phoneNum>0544448999</phoneNum>
   </tester>
   <tester>
-    <experience>50</experience>
-    <CollectionLicenseTypeTeaching>
-      <license>A</license>
-      <license>A1</license>
-      <license>A2</license>
-      <license>B</license>
-      <license>C</license>
-      <license>C1</license>
-    </CollectionLicenseTypeTeaching>
-    <maxDistance>100</maxDistance>
-    <maxWeekExams>230</maxWeekExams>
-    <schedule>
-      <Sunday>Sunday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Sunday>
-      <Monday>Monday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Monday>
-      <Tuesday>Tuesday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Tuesday>
-      <Wednesday>Wednesday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Wednesday>
-      <Thursday>Thursday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Thursday>
-    </schedule>
-    <id>207166471</id>
-    <address>London, שדרות, ישראל</address>
-    <birthDate>1913-10-30T00:00:00</birthDate>
-    <emailAddress>queen@london.uk</emailAddress>
-    <firstName>Queen</firstName>
-    <gender>Female</gender>
-    <lastName>Elizabeth</lastName>
-    <CollectionLicenseType />
-    <phoneNum>037982519</phoneNum>
-  </tester>
-  <tester>
     <experience>23</experience>
     <CollectionLicenseTypeTeaching>
       <license>_1</license>
@@ -350,58 +321,6 @@
     <experience>10</experience>
     <CollectionLicenseTypeTeaching>
       <license>A</license>
-      <license>A2</license>
-      <license>D</license>
-    </CollectionLicenseTypeTeaching>
-    <maxDistance>70</maxDistance>
-    <maxWeekExams>10</maxWeekExams>
-    <schedule>
-      <Sunday>Sunday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>true</hour><hour>false</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Sunday>
-      <Monday>Monday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>true</hour><hour>false</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Monday>
-      <Tuesday>Tuesday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>true</hour><hour>false</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Tuesday>
-      <Wednesday>Wednesday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>true</hour><hour>false</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Wednesday>
-      <Thursday>Thursday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>true</hour><hour>false</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Thursday>
-    </schedule>
-    <id>205950348</id>
-    <address>המלאכה a2, רעננה, ישראל</address>
-    <birthDate>1971-01-14T00:00:00</birthDate>
-    <emailAddress>baruch@gmail.com</emailAddress>
-    <firstName>Avi</firstName>
-    <gender>Male</gender>
-    <lastName>Baruch</lastName>
-    <CollectionLicenseType />
-    <phoneNum>036786785</phoneNum>
-  </tester>
-  <tester>
-    <experience>10</experience>
-    <CollectionLicenseTypeTeaching>
-      <license>A1</license>
-      <license>B</license>
-      <license>C1</license>
-    </CollectionLicenseTypeTeaching>
-    <maxDistance>33</maxDistance>
-    <maxWeekExams>18</maxWeekExams>
-    <schedule>
-      <Sunday>Sunday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Sunday>
-      <Monday>Monday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Monday>
-      <Tuesday>Tuesday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Tuesday>
-      <Wednesday>Wednesday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Wednesday>
-      <Thursday>Thursday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Thursday>
-    </schedule>
-    <id>18</id>
-    <address>Flieman Street, חיפה, ישראל                  </address>
-    <birthDate>1900-01-10T21:39:20Z</birthDate>
-    <emailAddress></emailAddress>
-    <firstName>a</firstName>
-    <gender>Other</gender>
-    <lastName>Shalit</lastName>
-    <CollectionLicenseType />
-    <phoneNum>0523456789</phoneNum>
-  </tester>
-  <tester>
-    <experience>10</experience>
-    <CollectionLicenseTypeTeaching>
-      <license>A</license>
       <license>A1</license>
       <license>A2</license>
       <license>B</license>
@@ -433,11 +352,10 @@
     <experience>10</experience>
     <CollectionLicenseTypeTeaching>
       <license>A</license>
-      <license>B</license>
-      <license>C</license>
-      <license>_1</license>
+      <license>A2</license>
+      <license>D</license>
     </CollectionLicenseTypeTeaching>
-    <maxDistance>67</maxDistance>
+    <maxDistance>70</maxDistance>
     <maxWeekExams>10</maxWeekExams>
     <schedule>
       <Sunday>Sunday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Sunday>
@@ -446,8 +364,35 @@
       <Wednesday>Wednesday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Wednesday>
       <Thursday>Thursday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Thursday>
     </schedule>
+    <id>205950348</id>
+    <address>המלאכה a2, רעננה, ישראל      </address>
+    <birthDate>1971-01-13T22:00:00Z</birthDate>
+    <emailAddress>baruch@gmail.com</emailAddress>
+    <firstName>Avi</firstName>
+    <gender>Male</gender>
+    <lastName>Baruch</lastName>
+    <CollectionLicenseType />
+    <phoneNum>036786785</phoneNum>
+  </tester>
+  <tester>
+    <experience>10</experience>
+    <CollectionLicenseTypeTeaching>
+      <license>A</license>
+      <license>B</license>
+      <license>C</license>
+      <license>_1</license>
+    </CollectionLicenseTypeTeaching>
+    <maxDistance>67</maxDistance>
+    <maxWeekExams>10</maxWeekExams>
+    <schedule>
+      <Sunday>Sunday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Sunday>
+      <Monday>Monday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Monday>
+      <Tuesday>Tuesday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Tuesday>
+      <Wednesday>Wednesday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Wednesday>
+      <Thursday>Thursday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Thursday>
+    </schedule>
     <id>201274370</id>
-    <address>גאולה, תל אביב יפו, ישראל  </address>
+    <address>גאולה, תל אביב יפו, ישראל    </address>
     <birthDate>1970-01-01T22:00:00Z</birthDate>
     <emailAddress>koen@gmail.com</emailAddress>
     <firstName>Yair</firstName>
@@ -455,5 +400,61 @@
     <lastName>Cohen</lastName>
     <CollectionLicenseType />
     <phoneNum>023568794</phoneNum>
+  </tester>
+  <tester>
+    <experience>50</experience>
+    <CollectionLicenseTypeTeaching>
+      <license>A</license>
+      <license>A1</license>
+      <license>A2</license>
+      <license>B</license>
+      <license>C</license>
+      <license>C1</license>
+    </CollectionLicenseTypeTeaching>
+    <maxDistance>100</maxDistance>
+    <maxWeekExams>230</maxWeekExams>
+    <schedule>
+      <Sunday>Sunday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Sunday>
+      <Monday>Monday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Monday>
+      <Tuesday>Tuesday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Tuesday>
+      <Wednesday>Wednesday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Wednesday>
+      <Thursday>Thursday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Thursday>
+    </schedule>
+    <id>207166471</id>
+    <address>London, שדרות, ישראל  </address>
+    <birthDate>1913-10-29T21:39:20Z</birthDate>
+    <emailAddress>queen@london.uk</emailAddress>
+    <firstName>Queen</firstName>
+    <gender>Female</gender>
+    <lastName>Elizabeth</lastName>
+    <CollectionLicenseType />
+    <phoneNum>037982519</phoneNum>
+  </tester>
+  <tester>
+    <experience>10</experience>
+    <CollectionLicenseTypeTeaching>
+      <license>A1</license>
+      <license>B</license>
+      <license>D2</license>
+      <license>C1</license>
+    </CollectionLicenseTypeTeaching>
+    <maxDistance>33</maxDistance>
+    <maxWeekExams>18</maxWeekExams>
+    <schedule>
+      <Sunday>Sunday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Sunday>
+      <Monday>Monday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Monday>
+      <Tuesday>Tuesday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Tuesday>
+      <Wednesday>Wednesday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Wednesday>
+      <Thursday>Thursday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Thursday>
+    </schedule>
+    <id>18</id>
+    <address>Flieman Street, חיפה, ישראל                              </address>
+    <birthDate>1950-01-10T22:00:00Z</birthDate>
+    <emailAddress></emailAddress>
+    <firstName>Gil</firstName>
+    <gender>Other</gender>
+    <lastName>Shalit</lastName>
+    <CollectionLicenseType />
+    <phoneNum>0523456789</phoneNum>
   </tester>
 </testers>
