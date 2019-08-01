@@ -7,20 +7,16 @@ class TraineeContent extends React.Component {
         showTable: true, updateId: null
     };
     handleUpdate = (updateTrainee) => {
-        console.log('update ' + updateTrainee.id);
         this.props.updateTrainee(updateTrainee);
         this.setState({ showTable: true });
     };
     handleRowClick = (id) => {
-        console.log('pressed ' + id);
         this.setState({ showTable: false, updateId: id });
     };
     handleDiscard = () => {
-        console.log('discard');
         this.setState({ showTable: true });
     };
     handleDelete = (id) => {
-        console.log('delete ' + id);
         this.setState({ showTable: true });
         this.props.deleteTrainee(id);
     };
@@ -54,7 +50,6 @@ class TraineeContent extends React.Component {
 
 class TraineeTable extends React.Component {
     handleRowClick = (id) => {
-        console.log(id);
         this.props.hadleRowClick(id);
     };
     render() {
@@ -65,7 +60,6 @@ class TraineeTable extends React.Component {
                 rowClicked={this.handleRowClick}
             />);
         });
-        console.log(trainees);
         return (
             <table className='ui selectable celled unstackable table'>
                 <thead>
@@ -97,7 +91,6 @@ class TraineeRow extends React.Component {
     };
     render() {
         var trainee = this.props.trainee;
-        console.log(trainee);
         return (
             <tr onClick={this.handleClick} >
                 <td className='left aligned'>{trainee.id}</td>
@@ -216,7 +209,6 @@ class TraineeForm extends React.Component {
     };
 
     handleSaveToServer = (message) => {
-        console.log(message);
         if (message === "OK") {
             this.props.onSaveTrainee(this.state);
         } else {
@@ -419,7 +411,6 @@ class LisenceTable extends React.Component {
                 return item.license !== lisence.license;
             });
         }
-        console.log(lisences.length);
         this.props.handleChangeLisence(lisences);
         this.setState({ license: lisences });
     };

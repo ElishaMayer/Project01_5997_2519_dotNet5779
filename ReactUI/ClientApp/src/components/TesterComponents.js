@@ -7,20 +7,16 @@ class TesterContent extends React.Component {
         showTable: true, updateId: null
     };
     handleUpdate = (updateTester) => {
-        console.log('update ' + updateTester.id);
         this.props.updateTester(updateTester);
         this.setState({ showTable: true });
     };
     handleRowClick = (id) => {
-        console.log('pressed ' + id);
         this.setState({ showTable: false, updateId: id });
     };
     handleDiscard = () => {
-        console.log('discard');
         this.setState({ showTable: true });
     };
     handleDelete = (id) => {
-        console.log('delete ' + id);
         this.setState({ showTable: true });
         this.props.deleteTester(id);
     };
@@ -54,7 +50,6 @@ class TesterContent extends React.Component {
 
 class TesterTable extends React.Component {
     handleRowClick = (id) => {
-        console.log(id);
         this.props.hadleRowClick(id);
     };
     render() {
@@ -64,7 +59,6 @@ class TesterTable extends React.Component {
                 rowClicked={this.handleRowClick}
             />);
         });
-        console.log(testers);
         return (
             <table className='ui selectable celled unstackable table'>
                 <thead>
@@ -97,7 +91,6 @@ class TesterRow extends React.Component {
     };
     render() {
         var tester = this.props.tester;
-        console.log(tester);
         return (
             <tr onClick={this.handleClick} >
                 <td className='left aligned'>{tester.id}</td>
@@ -225,7 +218,6 @@ class TesterForm extends React.Component {
             this.props.onSaveTester(this.state);
         } else {
             this.setState({ loadingUpdate: "ui primary button" });
-            console.log(message);
             this.state.birthDate = {
                 year: this.state.birthDate.getFullYear(),
                 month: this.state.birthDate.getMonth(),
@@ -508,10 +500,6 @@ class LicenseCheckBox extends React.Component {
         One: this.props.licenses.includes('1')
     }
     handleChange = (e) => {
-
-        if (e.target.name === 'A' && e.target.checked) {
-            console.log('A selected');
-        }
         var update = {};
         update[e.target.name] = e.target.checked;
         this.setState(update);

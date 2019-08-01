@@ -21,6 +21,7 @@ namespace ReactUI.Controllers
         [HttpGet]
         public IEnumerable<Tester> Get()
         {
+            System.Threading.Thread.Sleep(3000);
             return bl.AllTesters;
         }
 

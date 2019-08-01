@@ -264,26 +264,6 @@
     </CollectionLicenseTypeLearning>
   </trainee>
   <trainee>
-    <id>304883796</id>
-    <firstName>Avi</firstName>
-    <lastName>Cohen</lastName>
-    <gender>Male</gender>
-    <address>Klil, לוטם, ישראל</address>
-    <birthDate>1990-08-12T00:00:00</birthDate>
-    <emailAddress>abc.sc@gmail.com</emailAddress>
-    <phoneNum>0524897515</phoneNum>
-    <teacherName>Tamar</teacherName>
-    <schoolName>Hagefen</schoolName>
-    <CollectionLicenseTypeLearning>
-      <licenseTypeLearning>
-        <gearType>Automatic</gearType>
-        <license>A</license>
-        <numOfLessons>124</numOfLessons>
-        <readyForTest>true</readyForTest>
-      </licenseTypeLearning>
-    </CollectionLicenseTypeLearning>
-  </trainee>
-  <trainee>
     <id>332270446</id>
     <firstName>Tapiro</firstName>
     <lastName>Dudu</lastName>
@@ -350,26 +330,6 @@
     </CollectionLicenseTypeLearning>
   </trainee>
   <trainee>
-    <id>37982519</id>
-    <firstName>Fredman</firstName>
-    <lastName>Jacob</lastName>
-    <gender>Male</gender>
-    <address>ירושלים, בת ים, ישראל    </address>
-    <birthDate>1985-01-11T22:00:00Z</birthDate>
-    <emailAddress>abc@gmail.com</emailAddress>
-    <phoneNum></phoneNum>
-    <teacherName>Nechama</teacherName>
-    <schoolName>Shachar</schoolName>
-    <CollectionLicenseTypeLearning>
-      <licenseTypeLearning>
-        <gearType>Automatic</gearType>
-        <license>B</license>
-        <numOfLessons>25</numOfLessons>
-        <readyForTest>true</readyForTest>
-      </licenseTypeLearning>
-    </CollectionLicenseTypeLearning>
-  </trainee>
-  <trainee>
     <id>308378702</id>
     <firstName>Haya</firstName>
     <lastName>Weissfish</lastName>
@@ -391,6 +351,46 @@
         <gearType>Manual</gearType>
         <license>A1</license>
         <numOfLessons>80</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+    </CollectionLicenseTypeLearning>
+  </trainee>
+  <trainee>
+    <id>304883796</id>
+    <firstName>Avi</firstName>
+    <lastName>Cohen</lastName>
+    <gender>Male</gender>
+    <address>Klil, לוטם, ישראל  </address>
+    <birthDate>1990-08-11T21:00:00Z</birthDate>
+    <emailAddress>abc.sc@gmail.com</emailAddress>
+    <phoneNum>0524897515</phoneNum>
+    <teacherName>Tamar</teacherName>
+    <schoolName>Hagefen</schoolName>
+    <CollectionLicenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>A</license>
+        <numOfLessons>124</numOfLessons>
+        <readyForTest>true</readyForTest>
+      </licenseTypeLearning>
+    </CollectionLicenseTypeLearning>
+  </trainee>
+  <trainee>
+    <id>37982519</id>
+    <firstName>Fredman</firstName>
+    <lastName>Jacob</lastName>
+    <gender>Male</gender>
+    <address>ירושלים, בת ים, ישראל          </address>
+    <birthDate>1985-01-11T22:00:00Z</birthDate>
+    <emailAddress>abc@gmail.com</emailAddress>
+    <phoneNum></phoneNum>
+    <teacherName>Nechama</teacherName>
+    <schoolName>Shachar</schoolName>
+    <CollectionLicenseTypeLearning>
+      <licenseTypeLearning>
+        <gearType>Automatic</gearType>
+        <license>B</license>
+        <numOfLessons>25</numOfLessons>
         <readyForTest>true</readyForTest>
       </licenseTypeLearning>
     </CollectionLicenseTypeLearning>

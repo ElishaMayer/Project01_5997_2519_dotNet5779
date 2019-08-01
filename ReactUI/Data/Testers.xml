@@ -321,37 +321,6 @@
     <experience>10</experience>
     <CollectionLicenseTypeTeaching>
       <license>A</license>
-      <license>A1</license>
-      <license>A2</license>
-      <license>B</license>
-      <license>D2</license>
-      <license>D3</license>
-      <license>C</license>
-      <license>_1</license>
-    </CollectionLicenseTypeTeaching>
-    <maxDistance>160</maxDistance>
-    <maxWeekExams>7</maxWeekExams>
-    <schedule>
-      <Sunday>Sunday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Sunday>
-      <Monday>Monday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Monday>
-      <Tuesday>Tuesday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Tuesday>
-      <Wednesday>Wednesday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Wednesday>
-      <Thursday>Thursday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Thursday>
-    </schedule>
-    <id>3798</id>
-    <address>Sderot Giborei Israel, נתניה, ישראל        </address>
-    <birthDate>1950-10-31T22:00:00Z</birthDate>
-    <emailAddress>abu@g.com</emailAddress>
-    <firstName>Abu</firstName>
-    <gender>Male</gender>
-    <lastName>Yoyo</lastName>
-    <CollectionLicenseType />
-    <phoneNum>0548888888</phoneNum>
-  </tester>
-  <tester>
-    <experience>10</experience>
-    <CollectionLicenseTypeTeaching>
-      <license>A</license>
       <license>A2</license>
       <license>D</license>
     </CollectionLicenseTypeTeaching>
@@ -442,13 +411,13 @@
     <maxWeekExams>18</maxWeekExams>
     <schedule>
       <Sunday>Sunday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Sunday>
-      <Monday>Monday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Monday>
-      <Tuesday>Tuesday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Tuesday>
-      <Wednesday>Wednesday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>true</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Wednesday>
-      <Thursday>Thursday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Thursday>
+      <Monday>Monday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>true</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Monday>
+      <Tuesday>Tuesday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Tuesday>
+      <Wednesday>Wednesday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Wednesday>
+      <Thursday>Thursday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Thursday>
     </schedule>
     <id>18</id>
-    <address>Flieman Street, חיפה, ישראל                              </address>
+    <address>Flieman Street, חיפה, ישראל                            </address>
     <birthDate>1950-01-10T22:00:00Z</birthDate>
     <emailAddress></emailAddress>
     <firstName>Gil</firstName>
@@ -456,5 +425,36 @@
     <lastName>Shalit</lastName>
     <CollectionLicenseType />
     <phoneNum>0523456789</phoneNum>
+  </tester>
+  <tester>
+    <experience>10</experience>
+    <CollectionLicenseTypeTeaching>
+      <license>A</license>
+      <license>A1</license>
+      <license>A2</license>
+      <license>B</license>
+      <license>D2</license>
+      <license>D3</license>
+      <license>C</license>
+      <license>_1</license>
+    </CollectionLicenseTypeTeaching>
+    <maxDistance>160</maxDistance>
+    <maxWeekExams>7</maxWeekExams>
+    <schedule>
+      <Sunday>Sunday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Sunday>
+      <Monday>Monday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Monday>
+      <Tuesday>Tuesday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Tuesday>
+      <Wednesday>Wednesday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Wednesday>
+      <Thursday>Thursday<hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour><hour>false</hour></Thursday>
+    </schedule>
+    <id>3798</id>
+    <address>Sderot Giborei Israel, נתניה, ישראל          </address>
+    <birthDate>1950-10-31T22:00:00Z</birthDate>
+    <emailAddress>abu@g.com</emailAddress>
+    <firstName>Abu</firstName>
+    <gender>Male</gender>
+    <lastName>Yoyo</lastName>
+    <CollectionLicenseType />
+    <phoneNum>0548888888</phoneNum>
   </tester>
 </testers>

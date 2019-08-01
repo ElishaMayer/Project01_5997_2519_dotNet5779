@@ -1,15 +1,10 @@
 import React, { Component } from 'react';
-//import { start } from 'repl';
 import { TesterForm, TesterContent } from './TesterComponents';
 import { TesterClient } from './TesterClient';
 import { TraineeClient } from './TraineeClient';
 import { TraineeForm, TraineeContent } from './TraineeComponents';
 
 import { MenuBar } from './Menu';
-
-//import { Home } from './components/Home';
-//import { FetchData } from './components/FetchData';
-//import { Counter } from './components/Counter';
 
 export default class MainComponent extends Component {
     state = {
@@ -19,30 +14,22 @@ export default class MainComponent extends Component {
             [],
         addTester: false,
         addTrainee: false,
-        content:"Trainees"
+        content: "Trainees",
+        loadingTesters: true,
+        loadingTrainees:true
     };
     updateTester = (updateTester) => {
-        var testers = this.state.testers.map((tester) => {
-            if (tester.id === updateTester.id) {
-                return updateTester;
-            } else {
-                return tester;
-            }
-        });
-        this.setState({ testers: testers });
         TesterClient.getTesters(this.handleLoadTesters);
-
+        this.setState({ loadingTesters: true });
     };
     addTester = (addTester) => {
-        this.setState({ testers: this.state.testers.concat(addTester), addTester: false });
+        this.setState({ addTester: false });
         TesterClient.getTesters(this.handleLoadTesters);
+        this.setState({ loadingTesters: true });
     };
     removeTester = (id) => {
-        var testers = this.state.testers.filter((tester) => {
-            return (tester.id !== id)
-        });
-        this.setState({ testers: testers });
         TesterClient.getTesters(this.handleLoadTesters);
+        this.setState({ loadingTesters: true });
     };
     addTesterClick = () => {
         this.setState({ addTester: true });
@@ -52,31 +39,23 @@ export default class MainComponent extends Component {
     };
 
     updateTrainee = (updateTrainee) => {
-        var trainees = this.state.trainees.map((trainee) => {
-            if (trainee.id === updateTrainee.id) {
-                return updateTrainee;
-            } else {
-                return trainee;
-            }
-        });
-        this.setState({ trainees: trainees });
         TraineeClient.getTrainees(this.handleLoadTrainees);
+        this.setState({ loadingTrainees: true });
     };
     addTrainee = (addTrainee) => {
-        this.setState({ trainees: this.state.trainees.concat(addTrainee), addTrainee: false });
+        this.setState({addTrainee: false });
         TraineeClient.getTrainees(this.handleLoadTrainees);
+        this.setState({ loadingTrainees: true });
     };
     removeTrainee = (id) => {
-        var trainees = this.state.trainees.filter((trainee) => {
-            return (trainee.id !== id)
-        });
-        this.setState({ trainees: trainees })
+        TraineeClient.getTrainees(this.handleLoadTrainees);
+        this.setState({ loadingTrainees: true });
     };
     addTraineelick = () => {
-        this.setState({ addTrainee: true })
+        this.setState({ addTrainee: true });
     };
     discardTraineeClick = () => {
-        this.setState({ addTrainee: false })
+        this.setState({ addTrainee: false });
     };
     handleChangeContent = (content) => {
         this.setState({ content: content, addTrainee: false, addTester:false});
@@ -98,7 +77,7 @@ export default class MainComponent extends Component {
 
             return tester;
         });
-        this.setState({ testers: testers });
+        this.setState({ testers: testers, loadingTesters:false });
     }
     handleLoadTrainees = (trainees) => {
         trainees = trainees.map((trainee) => {
@@ -125,7 +104,7 @@ export default class MainComponent extends Component {
 
             return trainee;
         });
-        this.setState({ trainees: trainees });
+        this.setState({ trainees: trainees, loadingTrainees:false });
     }
     constructor(props) {
         super(props);
@@ -134,8 +113,13 @@ export default class MainComponent extends Component {
 
     }
     render() {
-
-        if (this.state.addTester) {
+        if (this.state.loadingTesters || this.state.loadingTrainees) {
+            var mainContent = (
+                    <div className="ui active inverted dimmer">
+                        <div className="ui text loader">Loading</div>
+                    </div>
+            );
+        }else if (this.state.addTester) {
             var mainContent = (
                 <TesterForm
                     tester={{ birthDate: (new Date(Date.now())) }}
