@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { TesterForm, TesterContent } from './TesterComponents';
+import {  TestContent } from './TestComponents';
 import { TesterClient } from './TesterClient';
+import { TestClient } from './TestClient';
 import { TraineeClient } from './TraineeClient';
 import { TraineeForm, TraineeContent } from './TraineeComponents';
 
@@ -12,25 +14,35 @@ export default class MainComponent extends Component {
             [],
         trainees:
             [],
+        tests: [],
         addTester: false,
         addTrainee: false,
-        content: "Trainees",
+        addTest: false,
+        content: "Tests",
         loadingTesters: true,
-        loadingTrainees:true
+        loadingTrainees: true,
+        loadingTests: true
+
     };
-    updateTester = (updateTester) => {
+
+    reloadTesters = () => {
         TesterClient.getTesters(this.handleLoadTesters);
         this.setState({ loadingTesters: true });
     };
-    addTester = (addTester) => {
-        this.setState({ addTester: false });
-        TesterClient.getTesters(this.handleLoadTesters);
-        this.setState({ loadingTesters: true });
+    reloadTests = () => {
+        TestClient.getTests(this.handleLoadTests);
+        this.setState({ loadingTests: true });
     };
-    removeTester = (id) => {
-        TesterClient.getTesters(this.handleLoadTesters);
-        this.setState({ loadingTesters: true });
+    reloadTrainees = () => {
+        TraineeClient.getTrainees(this.handleLoadTrainees);
+        this.setState({ loadingTrainees: true });
     };
+
+    addTester = () => {
+        this.setState({ addTester: false, content: "Testers" });
+        this.reloadTesters();
+    };
+
     addTesterClick = () => {
         this.setState({ addTester: true });
     };
@@ -38,27 +50,24 @@ export default class MainComponent extends Component {
         this.setState({ addTester: false });
     };
 
-    updateTrainee = (updateTrainee) => {
-        TraineeClient.getTrainees(this.handleLoadTrainees);
-        this.setState({ loadingTrainees: true });
+
+    addTrainee = () => {
+        this.setState({ addTrainee: false, content: "Trainees" });
+        this.reloadTrainees();
     };
-    addTrainee = (addTrainee) => {
-        this.setState({addTrainee: false });
-        TraineeClient.getTrainees(this.handleLoadTrainees);
-        this.setState({ loadingTrainees: true });
-    };
-    removeTrainee = (id) => {
-        TraineeClient.getTrainees(this.handleLoadTrainees);
-        this.setState({ loadingTrainees: true });
-    };
+
     addTraineelick = () => {
         this.setState({ addTrainee: true });
     };
     discardTraineeClick = () => {
         this.setState({ addTrainee: false });
     };
+
+    addTestClick = () => {
+        this.setState({ addTest: false });
+    };
     handleChangeContent = (content) => {
-        this.setState({ content: content, addTrainee: false, addTester:false});
+        this.setState({ content: content, addTrainee: false, addTester: false });
     };
     handleLoadTesters = (testers) => {
         testers = testers.map((tester) => {
@@ -77,7 +86,7 @@ export default class MainComponent extends Component {
 
             return tester;
         });
-        this.setState({ testers: testers, loadingTesters:false });
+        this.setState({ testers: testers, loadingTesters: false });
     }
     handleLoadTrainees = (trainees) => {
         trainees = trainees.map((trainee) => {
@@ -99,73 +108,113 @@ export default class MainComponent extends Component {
                     license['gearType'] = 'Manual';
                 }
                 return license;
-            } );
+            });
             trainee['address'] = trainee['address']['city'] + ' ' + trainee['address']['street'] + ' ' + trainee['address']['building'];
 
             return trainee;
         });
-        this.setState({ trainees: trainees, loadingTrainees:false });
+        this.setState({ trainees: trainees, loadingTrainees: false });
     }
+    handleLoadTests = (tests) => {
+        tests = tests.map((test) => {
+            test['licenseType'] = getLicense(test['licenseType']);
+            test['actualTestTime'] = new Date(test['actualTestTime']);
+            test['testTime'] = new Date(test['testTime']);
+            test['addressOfBeginningTest'] = test['addressOfBeginningTest']['city'] + ' ' + test['addressOfBeginningTest']['street'] + ' ' + test['addressOfBeginningTest']['building'];
+            return test;
+
+        });
+        this.setState({ tests: tests });
+    };
     constructor(props) {
         super(props);
         TesterClient.getTesters(this.handleLoadTesters);
+        TestClient.getTests(this.handleLoadTests);
         TraineeClient.getTrainees(this.handleLoadTrainees);
+
 
     }
     render() {
         if (this.state.loadingTesters || this.state.loadingTrainees) {
             var mainContent = (
+                <div className='ui unstackable items'>
+                    <MenuBar
+                        changeContent={this.handleChangeContent}
+                        addTester={this.addTesterClick}
+                        addTest={this.addTestClick}
+                        addTrainee={this.addTraineelick} />
                     <div className="ui active inverted dimmer">
                         <div className="ui text loader">Loading</div>
                     </div>
+                </div>
             );
-        }else if (this.state.addTester) {
+        } else if (this.state.addTester) {
             var mainContent = (
-                <TesterForm
-                    tester={{ birthDate: (new Date(Date.now())) }}
-                    onDiscardTester={this.discardTesterClick}
-                    onSaveTester={this.addTester}
-                    add={true}
-                />);
+                <div className='ui unstackable items'>
+                    <h1 className="ui dividing centered header">Add New Tester</h1>
+                    <TesterForm
+                        tester={{ birthDate: (new Date(Date.now())) }}
+                        onDiscardTester={this.discardTesterClick}
+                        onSaveTester={this.addTester}
+                        add={true}
+                    />
+                </div>
+            );
         } else if (this.state.addTrainee) {
             var mainContent = (
-                <TraineeForm
-                    trainee={{ birthDate: (new Date(Date.now())) }}
-                    onDiscardTrainee={this.discardTraineeClick}
-                    onSaveTrainee={this.addTrainee}
-                    add={true}
-                />);
-        } else{
+                <div className='ui unstackable items'>
+                    <h1 className="ui dividing centered header">Add New Trainee</h1>
+                    <TraineeForm
+                        trainee={{ birthDate: (new Date(Date.now())) }}
+                        onDiscardTrainee={this.discardTraineeClick}
+                        onSaveTrainee={this.addTrainee}
+                        add={true}
+                    />
+                </div>
+            );
+        } else {
             var mainContent = (
-                <div className="main ui container">
-                <h1 className="ui dividing centered header">{this.state.content}</h1>
-                <MainContent
-                    content={this.state.content}
-                    updateTester={this.updateTester}
-                    deleteTester={this.removeTester}
-                    testers={this.state.testers}
-                    updateTrainee={this.updateTrainee}
-                    deleteTrainee={this.removeTrainee}
-                    trainees={this.state.trainees} />
-                    </div>);
+                <div className='ui unstackable items'>
+                    <MenuBar
+                        changeContent={this.handleChangeContent}
+                        addTester={this.addTesterClick}
+                        addTrainee={this.addTraineelick}
+                        addTest={this.addTestClick}
+                    />
+                    <div className="main ui container">
+                        <h1 className="ui dividing centered header">{this.state.content}</h1>
+                        <MainContent
+                            content={this.state.content}
+                            updateTester={this.reloadTesters}
+                            deleteTester={this.reloadTesters}
+                            testers={this.state.testers}
+                            tests={this.state.tests}
+                            updateTrainee={this.reloadTrainees}
+                            deleteTrainee={this.reloadTrainees}
+                            deleteTest={this.reloadTests}
+                            updateTest={this.reloadTests}
+                            trainees={this.state.trainees} />
+                    </div>
+                </div>
+            );
         }
         return (
-            <div className='ui unstackable items'>
-                <MenuBar
-                    changeContent={this.handleChangeContent}
-                    addTester={this.addTesterClick}
-                    addTrainee={this.addTraineelick} />
-                {mainContent}
-            </div>
+
+            mainContent
+
         );
     }
 }
 
 class MainContent extends React.Component {
     render() {
+        var con = this.props.content;
         if (this.props.content === "Tests") {
             return (
-                <TestContent />
+                <TestContent
+                    tests={this.props.tests}
+                    updateTest={this.props.updateTest}
+                    deleteTest={this.props.deleteTest}/>
             );
         } else if (this.props.content === "Testers") {
             return (
@@ -180,21 +229,15 @@ class MainContent extends React.Component {
                 <TraineeContent
                     updateTrainee={this.props.updateTrainee}
                     deleteTrainee={this.props.deleteTrainee}
-                    trainees={this.props.trainees}/>
+                    trainees={this.props.trainees} />
             );
         } else {
-            <b>error</b>
+            return (
+                <b>error</b>);
         }
     }
 }
 
-class TestContent extends React.Component {
-    render() {
-        return (
-            <p>not imp</p>
-        );
-    }
-}
 
 function getLicense(data) {
     if (data == 0) {

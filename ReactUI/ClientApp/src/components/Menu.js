@@ -8,19 +8,20 @@ class MenuBar extends React.Component {
         this.props.changeContent("Trainees");
     }
     changeToTest = () => {
-        this.props.changeContent("Test");
+        this.props.changeContent("Tests");
     }
     render() {
         return (
             <div className='ui inverted massive menu'>
                 <TraineeMenu
                     changeTo={this.changeToTrainee}
-                    addTrainee={this.props.addTrainee}/>
+                    addTrainee={this.props.addTrainee} />
                 <TesterMenu
                     changeTo={this.changeToTester}
                     addTester={this.props.addTester} />
-                <TestMenu />
-
+                <TestMenu
+                    changeTo={this.changeToTest}
+                    addTest={this.props.addTest} />
             </div>
         );
     }
@@ -64,17 +65,22 @@ class TraineeMenu extends React.Component {
 }
 
 class TestMenu extends React.Component {
+    addTest = () => {
+        console.log('add clicked');
+        this.props.addTest();
+    };
     render() {
         return (
             <div className="ui big simple dropdown item">
-                Tests
+                Test
                     <i className="dropdown icon"></i>
                 <div className="menu">
-                    <div className="item">Add New</div>
+                    <div className="item" onClick={this.addTest}>Add New</div>
+                    <div className="item" onClick={this.props.changeTo}>Show All Tests</div>
                 </div>
             </div>
         );
     }
 }
 
-export { MenuBar}
+export { MenuBar }

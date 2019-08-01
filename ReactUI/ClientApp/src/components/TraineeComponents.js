@@ -58,6 +58,7 @@ class TraineeTable extends React.Component {
             return (<TraineeRow
                 trainee={trainee}
                 rowClicked={this.handleRowClick}
+                key={trainee.id}
             />);
         });
         return (

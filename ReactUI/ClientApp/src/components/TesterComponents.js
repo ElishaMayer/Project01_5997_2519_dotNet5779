@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { TesterClient } from './TesterClient';
 
 
@@ -21,10 +21,11 @@ class TesterContent extends React.Component {
         this.props.deleteTester(id);
     };
     render() {
+        var tester = {};
         if (this.state.testerId === null) {
-            var tester = {};
+            tester = {};
         } else {
-            var tester = this.props.testers.find((tester) => tester.id === this.state.updateId);
+            tester = this.props.testers.find((tester) => tester.id === this.state.updateId);
         }
         if (this.state.showTable === true) {
             return (
@@ -182,7 +183,7 @@ class TesterForm extends React.Component {
             errorMessage.push("Please Enter a Valid Id.");
             data.error.id = " error";
         }
-        if (errorMessage.length == 0) {
+        if (errorMessage.length === 0) {
             this.state.birthDate = new Date(this.state.birthDate.year, this.state.birthDate.month, this.state.birthDate.day);
             this.state['licenseTypeTeaching'] = this.state['license'];
             this.state['licenseTypeTeaching'] = this.state['licenseTypeTeaching'].map((num) => getLicense(num));

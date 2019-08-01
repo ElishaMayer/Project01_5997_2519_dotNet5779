@@ -179,8 +179,7 @@ namespace BL
                 throw new Exception("Test doesn't exist");
             if (AllTests.Any(test =>
                 test.Id == updatedTest.Id && (test.TesterId != updatedTest.TesterId ||
-                                              test.TraineeId != updatedTest.TraineeId ||
-                                              test.TestTime != updatedTest.TestTime)))
+                                              test.TraineeId != updatedTest.TraineeId )))
                 throw new Exception("Can't change this test details. please create new test");
             if (updatedTest.Criteria.Count <= Configuration.MinimumCriteria)
                 throw new Exception("Not enough criterion");
