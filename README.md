@@ -35,10 +35,16 @@ The client is written with React. There is a screen with a table to show all the
 ## Screenshots (React UI)
 
 
-To run the web Server, set the WebApi project to run at startup.
-<p><b>Screenshot:<b/></p> <kbd>
-<img src="Images/web.png" >
-  </kbd>
+To run the web Server, set the WebApi project to run at startup.</br>
+**Tests Table:**
+<kbd>
+<img src="Images/React1.png" >
+</kbd>
+
+**Edit Tester:**
+<kbd>
+<img src="Images/React2.png" >
+</kbd>
  
 # Screenshots (WPF)
 <p><b>Login Page:<b/></p>
