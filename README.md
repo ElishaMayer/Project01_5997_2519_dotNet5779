@@ -14,7 +14,8 @@ To download the solution and run it in visual studio:<br/>
   2. Extract the zip file.<br/>
   3. Open the "Project01_5997_2519_dotNet5779.sln" file in visual studio.<br/>
   4. In solution explorer click on Solution with the right mouse button and click on "Restore NuGet Packages".<br/>
-  5. Click with the right mouse button on the project named "PLWPF" and choose "Set as Startup Project".<br/>
+  5. To run the WPF inetrface click with the right mouse button on the project named "PLWPF" and choose "Set as Startup Project".<br/>
+  5. To run the Web Application inetrface click with the right mouse button on the project named "ReactUI" and choose "Set as Startup Project".<br/>
   6. Press Ctrl + F5 to run the program.<br/>
   
   The login username for administrator is "Admin" and the password is empty. Username and password can be changed in the settings.<br/><br/>
@@ -24,10 +25,15 @@ To use Email sending and Google Address services please enter your email address
 <b>Without a Google Developer Key changing addresses and setting a tests won't work!<b/><br/>
 To get a Google developers key click <a href="https://cloud.google.com/maps-platform/?__utma=102347093.263806779.1542194601.1550217374.1550217374.1&__utmb=102347093.0.10.1550217374&__utmc=102347093&__utmx=-&__utmz=102347093.1550217374.1.1.utmcsr=google|utmccn=(organic)|utmcmd=organic|utmctr=(not%20provided)&__utmv=-&__utmk=187351080&_ga=2.199940974.1599212436.1550217359-263806779.1542194601#get-started">here</a>.<br/>
  
-# Web API
-I started to add a web API using ASP.NET Core. I build a simple client to show the data in tables using javascript. 
-</br>
-</br>
+# Web Application
+## Web API
+I added a web API using ASP.NET Core. The api provides CRUD functions for Trainee, Tester and Tests. The web api is located in ReactUI project. 
+
+## React Client
+The client is written with React. There is a screen with a table to show all the Tests, Testers and Trainees. When you click on a line in the table you can see the details and update them.
+
+## Screenshots (React UI)
+
 
 To run the web Server, set the WebApi project to run at startup.
 <p><b>Screenshot:<b/></p> <kbd>
