@@ -70,7 +70,7 @@ namespace ReactUI.Controllers
                         catch (Exception ex) { };
                     }
                 }
-                 System.Threading.Thread.Sleep(2000);
+             //    System.Threading.Thread.Sleep(2000);
                 test.ActualTestTime = DateTime.Now;
                 bl.UpdateTest(test);
                 return "OK";
@@ -90,7 +90,7 @@ namespace ReactUI.Controllers
                 Test test = new Test();
                 test.Id = $"{id:00000000}";
                 bl.RemoveTest(test);
-                System.Threading.Thread.Sleep(2000);
+          //      System.Threading.Thread.Sleep(2000);
                 return "OK";
             }
             catch (Exception ex)

@@ -21,7 +21,7 @@ namespace ReactUI.Controllers
         [HttpGet]
         public IEnumerable<Tester> Get()
         {
-            System.Threading.Thread.Sleep(3000);
+         //   System.Threading.Thread.Sleep(3000);
             return bl.AllTesters;
         }
 
@@ -80,7 +80,7 @@ namespace ReactUI.Controllers
                     }
                 }
                 tester.LicenseType = new List<LicenseType>();
-                System.Threading.Thread.Sleep(2000);
+          //      System.Threading.Thread.Sleep(2000);
 
                 bl.AddTester(tester);
                 return "OK";
@@ -136,7 +136,7 @@ namespace ReactUI.Controllers
                     }
                 }
                 tester.LicenseType = new List<LicenseType>();
-                System.Threading.Thread.Sleep(2000);
+          //      System.Threading.Thread.Sleep(2000);
 
                 bl.UpdateTester(tester);
                 return "OK";
@@ -156,7 +156,7 @@ namespace ReactUI.Controllers
                 Tester tester = new Tester();
                 tester.Id = (uint)id;
                 bl.RemoveTester(tester);
-                System.Threading.Thread.Sleep(2000);
+         //       System.Threading.Thread.Sleep(2000);
                 return "OK";
             }
             catch (Exception ex)

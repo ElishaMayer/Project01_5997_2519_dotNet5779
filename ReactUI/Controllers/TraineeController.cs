@@ -21,7 +21,7 @@ namespace ReactUI.Controllers
         [HttpGet]
         public IEnumerable<Trainee> Get()
         {
-            System.Threading.Thread.Sleep(3000);
+      //      System.Threading.Thread.Sleep(3000);
             return bl.AllTrainees;
         }
 
@@ -75,7 +75,7 @@ namespace ReactUI.Controllers
                     }
                 }
                 trainee.LicenseType = new List<LicenseType>();
-                System.Threading.Thread.Sleep(2000);
+      //          System.Threading.Thread.Sleep(2000);
                 bl.AddTrainee(trainee);
                 return "OK";
             }
@@ -128,7 +128,7 @@ namespace ReactUI.Controllers
                     }
                 }
                 trainee.LicenseType = new List<LicenseType>();
-                System.Threading.Thread.Sleep(2000);
+        //        System.Threading.Thread.Sleep(2000);
                 bl.UpdateTrainee(trainee);
                 return "OK";
             }
@@ -149,7 +149,7 @@ namespace ReactUI.Controllers
                 Trainee trainee = new Trainee();
                 trainee.Id = (uint)id;
                 bl.RemoveTrainee(trainee);
-                System.Threading.Thread.Sleep(2000);
+       //         System.Threading.Thread.Sleep(2000);
                 return "OK";
             }
             catch (Exception ex)
